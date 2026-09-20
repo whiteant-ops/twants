@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <circle cx="200" cy="320" r="300" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="1100" cy="200" r="250" fill="#8b5cf6" opacity="0.06"/>
+  <rect x="100" y="200" width="1080" height="240" rx="16" fill="#1e293b" opacity="0.6"/>
+  <text x="640" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-2">TWANTS</text>
+  <text x="640" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#94a3b8" text-anchor="middle">A Modern Tailwind UI System for Everywhere</text>
+  <text x="640" y="400" font-family="monospace" font-size="18" fill="#3b82f6" text-anchor="middle">tailwindcss v4 · fluent-inspired · framework-agnostic</text>
+  <rect x="100" y="500" width="200" height="4" rx="2" fill="url(#accent)"/>
+  <text x="100" y="560" font-family="monospace" font-size="16" fill="#64748b">github.com/whiteant-ops/twants</text>
+</svg>

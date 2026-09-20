@@ -1,5 +1,5 @@
 {
-    "name": "whiteant-ops/twants",
+    "name": "twants",
     "version": "0.1.0",
     "description": "A Modern Tailwind UI System for Everywhere. Framework-agnostic components inspired by WinUI / Fluent Design.",
     "type": "module",

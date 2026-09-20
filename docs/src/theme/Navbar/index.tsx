@@ -35,7 +35,7 @@ export default function Navbar(): React.ReactElement {
   ];
 
   return (
-    <header className={styles.navbar}>
+    <header className={`navbar ${styles.navbar}`}>
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
           <img src={logo} alt="" width={22} height={22} />
