@@ -772,6 +772,68 @@
     border-radius: var(--twants-radius-full);
   }
 
+  /* Navigation Menu */
+  .twants-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0 0.5rem;
+  }
+  .twants-nav-menu-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-secondary);
+    text-decoration: none;
+    border-radius: var(--twants-radius);
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    transition: color var(--twants-duration-fast) var(--twants-ease-standard),
+                background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-nav-menu-item:hover { color: var(--twants-foreground); background: var(--twants-surface-secondary); }
+  .twants-nav-menu-item[aria-current="page"] { color: var(--twants-primary); }
+  .twants-nav-menu-dropdown { position: relative; }
+  .twants-nav-menu-dropdown .twants-dropdown { display: none; position: absolute; top: 100%; left: 0; }
+  .twants-nav-menu-dropdown:hover .twants-dropdown { display: block; }
+
+  /* Menubar */
+  .twants-menubar {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.25rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius);
+  }
+  .twants-menubar-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.625rem;
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-secondary);
+    background: transparent;
+    border: 0;
+    border-radius: var(--twants-radius-sm);
+    cursor: pointer;
+    transition: color var(--twants-duration-fast) var(--twants-ease-standard),
+                background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-menubar-item:hover,
+  .twants-menubar-item[data-state="open"] {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+  .twants-menubar-item[data-state="open"] {
+    background: var(--twants-surface-secondary);
+  }
+
   /* Breadcrumb */
   .twants-breadcrumb {
     display: flex;

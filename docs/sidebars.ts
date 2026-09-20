@@ -52,6 +52,36 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Navigation",
+      items: [
+        "components/tabs",
+        "components/breadcrumb",
+        "components/pagination",
+        "components/sidebar",
+        "components/navigation-menu",
+        "components/menubar",
+        "components/command",
+        "components/dropdown-menu",
+      ],
+    },
+    {
+      type: "category",
+      label: "Data Display",
+      items: [
+        "components/card",
+      ],
+    },
+    {
+      type: "category",
+      label: "Feedback",
+      items: [
+        "components/alert",
+        "components/toast",
+        "components/dialog",
+      ],
+    },
+    {
+      type: "category",
       label: "Integrations",
       items: ["integrations/laravel", "integrations/django", "integrations/tauri", "integrations/wails", "integrations/vanilla"],
     },
