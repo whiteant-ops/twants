@@ -69,6 +69,8 @@ const sidebars: SidebarsConfig = {
       label: "Data Display",
       items: [
         "components/card",
+        "components/table",
+        "components/tree",
       ],
     },
     {
@@ -78,6 +80,51 @@ const sidebars: SidebarsConfig = {
         "components/alert",
         "components/toast",
         "components/dialog",
+      ],
+    },
+    {
+      type: "category",
+      label: "Layout",
+      items: [
+        "components/container",
+        "components/grid",
+        "components/aspect-ratio",
+        "components/resizable",
+      ],
+    },
+    {
+      type: "category",
+      label: "Overlay",
+      items: [
+        "components/tooltip",
+        "components/popover",
+        "components/sheet",
+        "components/context-menu",
+      ],
+    },
+    {
+      type: "category",
+      label: "Media",
+      items: [
+        "components/avatar",
+        "components/icon",
+        "components/image",
+      ],
+    },
+    {
+      type: "category",
+      label: "Date & Time",
+      items: [
+        "components/calendar",
+      ],
+    },
+    {
+      type: "category",
+      label: "Other",
+      items: [
+        "components/collapsible",
+        "components/scroll-area",
+        "components/stepper",
       ],
     },
     {
