@@ -150,6 +150,17 @@ const sidebars: SidebarsConfig = {
       label: "Integrations",
       items: ["integrations/laravel", "integrations/django", "integrations/tauri", "integrations/wails", "integrations/vanilla"],
     },
+    {
+      type: "category",
+      label: "Examples",
+      items: [
+        "examples/dashboard",
+        "examples/login",
+        "examples/register",
+        "examples/otp",
+        "examples/forgot-password",
+      ],
+    },
     "changelog",
     "contributing",
     "license",
