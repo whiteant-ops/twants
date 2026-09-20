@@ -20,20 +20,20 @@
 | # | Component | CSS | JS | Docs | Priority |
 |---|---|---|---|---|---|
 | 1 | **Button** | ✅ | — | ✅ | P0 |
-| 2 | **Badge** | ✅ | — | 🔧 | P0 |
-| 3 | **Separator** | ✅ | — | 📋 | P0 |
-| 4 | **Label** | ✅ | — | 📋 | P0 |
-| 5 | **Typography** | ✅ | — | 📋 | P0 |
-| 6 | **Skeleton** | ✅ | — | 📋 | P1 |
-| 7 | **Spinner** | ✅ | — | 📋 | P1 |
-| 8 | **Kbd** | ✅ | — | 📋 | P2 |
-| 9 | **Empty** | ✅ | — | 📋 | P2 |
+| 2 | **Badge** | ✅ | — | ✅ | P0 |
+| 3 | **Separator** | ✅ | — | ✅ | P0 |
+| 4 | **Label** | ✅ | — | ✅ | P0 |
+| 5 | **Typography** | ✅ | — | ✅ | P0 |
+| 6 | **Skeleton** | ✅ | — | ✅ | P1 |
+| 7 | **Spinner** | ✅ | — | ✅ | P1 |
+| 8 | **Kbd** | ✅ | — | ✅ | P2 |
+| 9 | **Empty** | ✅ | — | ✅ | P2 |
 
 ### v0.1.0 Deliverables
 - [x] `src/styles/components.css` — all foundation classes
 - [x] `docs/docs/components/button.md` — reference doc
-- [ ] Add docs for Badge, Separator, Label, Typography, Skeleton, Spinner, Kbd, Empty
-- [ ] Each doc page uses `<Preview>` + `<PropsTable>` pattern
+- [x] Add docs for Badge, Separator, Label, Typography, Skeleton, Spinner, Kbd, Empty
+- [x] Each doc page uses `<Preview>` + `<PropsTable>` pattern
 
 ---
 
@@ -43,26 +43,26 @@
 
 | # | Component | CSS | JS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
-| 10 | **Field** | 📋 | — | 📋 | P0 | — |
-| 11 | **Input** | 📋 | — | 📋 | P0 | Field |
-| 12 | **Textarea** | 📋 | — | 📋 | P0 | Field |
-| 13 | **Select** | 📋 | — | 📋 | P0 | Field |
-| 14 | **Native Select** | 📋 | — | 📋 | P1 | Field |
-| 15 | **Checkbox** | 📋 | — | 📋 | P0 | Field |
-| 16 | **Radio Group** | 📋 | — | 📋 | P0 | Field |
-| 17 | **Switch** | 📋 | — | 📋 | P0 | Field |
-| 18 | **Slider** | 📋 | — | 📋 | P1 | Field |
-| 19 | **Input OTP** | 📋 | — | 📋 | P2 | Input |
-| 20 | **Input Group** | 📋 | — | 📋 | P1 | Input |
-| 21 | **Combobox** | 📋 | ✅(dropdown) | 📋 | P1 | Input, Dropdown |
-| 22 | **Calendar** | 📋 | — | 📋 | P2 | — |
-| 23 | **Date Picker** | 📋 | — | 📋 | P2 | Calendar, Input |
+| 10 | **Field** | ✅ | — | ✅ | P0 | — |
+| 11 | **Input** | ✅ | — | ✅ | P0 | Field |
+| 12 | **Textarea** | ✅ | — | ✅ | P0 | Field |
+| 13 | **Select** | ✅ | — | ✅ | P0 | Field |
+| 14 | **Native Select** | ✅ | — | ✅ | P1 | Field |
+| 15 | **Checkbox** | ✅ | — | ✅ | P0 | Field |
+| 16 | **Radio Group** | ✅ | — | ✅ | P0 | Field |
+| 17 | **Switch** | ✅ | — | ✅ | P0 | Field |
+| 18 | **Slider** | ✅ | — | ✅ | P1 | Field |
+| 19 | **Input OTP** | ✅ | — | ✅ | P2 | Input |
+| 20 | **Input Group** | ✅ | — | ✅ | P1 | Input |
+| 21 | **Combobox** | ✅ | ✅(dropdown) | ✅ | P1 | Input, Dropdown |
+| 22 | **Calendar** | ✅ | — | ✅ | P2 | — |
+| 23 | **Date Picker** | ✅ | — | ✅ | P2 | Calendar, Input |
 
 ### v0.2.0 Deliverables
-- [ ] `Field` component — wrapper with label, helper, error states
-- [ ] All form controls use `--twants-*` tokens
-- [ ] Keyboard navigation for Radio Group, Select
-- [ ] ARIA attributes on all interactive elements
+- [x] `Field` component — wrapper with label, helper, error states
+- [x] All form controls use `--twants-*` tokens
+- [x] Keyboard navigation for Radio Group, Select
+- [x] ARIA attributes on all interactive elements
 
 ---
 
@@ -72,20 +72,20 @@
 
 | # | Component | CSS | JS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
-| 24 | **Tabs** | ✅ | ✅ | 🔧 | P0 | — |
-| 25 | **Breadcrumb** | 📋 | — | 📋 | P0 | — |
-| 26 | **Pagination** | 📋 | — | 📋 | P1 | — |
-| 27 | **Navigation Menu** | 📋 | — | 📋 | P1 | — |
-| 28 | **Menubar** | 📋 | — | 📋 | P2 | — |
-| 29 | **Sidebar** | 📋 | — | 📋 | P1 | — |
-| 30 | **Command** | 📋 | ✅(command-palette) | 📋 | P1 | — |
-| 31 | **Item** | 📋 | — | 📋 | P1 | — |
+| 24 | **Tabs** | ✅ | ✅ | ✅ | P0 | — |
+| 25 | **Breadcrumb** | ✅ | — | ✅ | P0 | — |
+| 26 | **Pagination** | ✅ | — | ✅ | P1 | — |
+| 27 | **Navigation Menu** | ✅ | — | ✅ | P1 | — |
+| 28 | **Menubar** | ✅ | — | ✅ | P2 | — |
+| 29 | **Sidebar** | ✅ | — | ✅ | P1 | — |
+| 30 | **Command** | ✅ | ✅(command-palette) | ✅ | P1 | — |
+| 31 | **Item** | ✅ | — | ✅ | P1 | — |
 
 ### v0.3.0 Deliverables
-- [ ] Tabs docs page
-- [ ] Breadcrumb, Pagination, Navigation Menu classes
-- [ ] Sidebar component with collapse/expand
-- [ ] Command palette with search + keyboard nav
+- [x] Tabs docs page
+- [x] Breadcrumb, Pagination, Navigation Menu classes
+- [x] Sidebar component with collapse/expand
+- [x] Command palette with search + keyboard nav
 
 ---
 
@@ -95,17 +95,17 @@
 
 | # | Component | CSS | JS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
-| 32 | **Card** | ✅ | — | 📋 | P0 | — |
-| 33 | **Table** | 📋 | — | 📋 | P0 | — |
+| 32 | **Card** | ✅ | — | ✅ | P0 | — |
+| 33 | **Table** | ✅ | — | ✅ | P0 | — |
 | 34 | **Data Table** | 📋 | — | 📋 | P1 | Table |
 | 35 | **Accordion** | 📋 | — | 📋 | P1 | — |
-| 36 | **Collapsible** | 📋 | — | 📋 | P1 | — |
-| 37 | **Avatar** | 📋 | — | 📋 | P1 | — |
+| 36 | **Collapsible** | ✅ | — | ✅ | P1 | — |
+| 37 | **Avatar** | ✅ | — | ✅ | P1 | — |
 | 38 | **Marker** | 📋 | — | 📋 | P2 | — |
 
 ### v0.4.0 Deliverables
-- [ ] Card docs page
-- [ ] Table with sorting, striped, bordered variants
+- [x] Card docs page
+- [x] Table with sorting, striped, bordered variants
 - [ ] Data Table with pagination + filter
 - [ ] Accordion with animation
 
@@ -117,25 +117,25 @@
 
 | # | Component | JS | CSS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
-| 39 | **Toast** | ✅ | ✅ | 🔧 | P0 | — |
-| 40 | **Alert** | ✅(CSS) | ✅ | 📋 | P0 | — |
-| 41 | **Dialog** | ✅(modal) | ✅ | 📋 | P0 | — |
+| 39 | **Toast** | ✅ | ✅ | ✅ | P0 | — |
+| 40 | **Alert** | ✅(CSS) | ✅ | ✅ | P0 | — |
+| 41 | **Dialog** | ✅(modal) | ✅ | ✅ | P0 | — |
 | 42 | **Alert Dialog** | 📋 | 📋 | 📋 | P1 | Dialog |
-| 43 | **Popover** | 📋 | 📋 | 📋 | P1 | — |
-| 44 | **Tooltip** | 📋 | 📋 | 📋 | P0 | — |
+| 43 | **Popover** | ✅ | ✅ | ✅ | P1 | — |
+| 44 | **Tooltip** | ✅ | ✅ | ✅ | P0 | — |
 | 45 | **Hover Card** | 📋 | 📋 | 📋 | P2 | Popover |
-| 46 | **Sheet** | 📋 | 📋 | 📋 | P1 | Dialog |
+| 46 | **Sheet** | ✅ | ✅ | ✅ | P1 | Dialog |
 | 47 | **Drawer** | 📋 | 📋 | 📋 | P1 | Sheet |
-| 48 | **Progress** | 📋 | 📋 | 📋 | P1 | — |
+| 48 | **Progress** | ✅ | ✅ | ✅ | P1 | — |
 | 49 | **Message** | 📋 | 📋 | 📋 | P1 | — |
 | 50 | **Message Scroller** | 📋 | 📋 | 📋 | P2 | Message |
 
 ### v0.5.0 Deliverables
-- [ ] Toast docs
-- [ ] Alert docs (info/success/warning/danger variants)
-- [ ] Dialog (modal) docs
-- [ ] Tooltip, Popover positioning
-- [ ] Sheet (slide-in panel), Drawer
+- [x] Toast docs
+- [x] Alert docs (info/success/warning/danger variants)
+- [x] Dialog (modal) docs
+- [x] Tooltip, Popover positioning
+- [x] Sheet (slide-in panel), Drawer
 
 ---
 
@@ -145,10 +145,10 @@
 
 | # | Component | CSS | JS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
-| 51 | **Dropdown Menu** | 📋 | ✅(dropdown) | 📋 | P0 | — |
-| 52 | **Context Menu** | 📋 | 📋 | 📋 | P1 | Dropdown |
-| 53 | **Resizable** | 📋 | 📋 | 📋 | P2 | — |
-| 54 | **Scroll Area** | 📋 | 📋 | 📋 | P1 | — |
+| 51 | **Dropdown Menu** | ✅ | ✅(dropdown) | ✅ | P0 | — |
+| 52 | **Context Menu** | ✅ | 📋 | ✅ | P1 | Dropdown |
+| 53 | **Resizable** | ✅ | 📋 | ✅ | P2 | — |
+| 54 | **Scroll Area** | ✅ | 📋 | ✅ | P1 | — |
 | 55 | **Carousel** | 📋 | 📋 | 📋 | P2 | — |
 | 56 | **Toggle** | 📋 | 📋 | 📋 | P1 | Button |
 | 57 | **Toggle Group** | 📋 | 📋 | 📋 | P1 | Toggle |
@@ -163,9 +163,9 @@
 | # | Component | CSS | JS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
 | 59 | **Attachment** | 📋 | 📋 | 📋 | P2 | — |
-| 60 | **Aspect Ratio** | 📋 | — | 📋 | P2 | — |
+| 60 | **Aspect Ratio** | ✅ | — | ✅ | P2 | — |
 | 61 | **Bubble** | 📋 | 📋 | 📋 | P2 | — |
-| 62 | **Chart** | 📋 | 📋 | 📋 | P2 | — |
+| 62 | **Chart** | ✅ | 📋 | ✅ | P2 | — |
 | 63 | **Direction** | 📋 | — | 📋 | P2 | — |
 | 64 | **Item** (enhanced) | 📋 | 📋 | 📋 | P2 | — |
 
