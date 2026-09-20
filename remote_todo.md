@@ -178,6 +178,184 @@ Workflow publish menggunakan secret tersebut saat release dipublikasikan. Jangan
 
 ---
 
+## 7A. Checklist Publish Manual ke npm Registry
+
+Bagian ini digunakan jika package ingin dipublikasikan manual dari komputer lokal, tanpa menunggu workflow GitHub Actions.
+
+### Status Prasyarat Saat Ini
+
+- [x] Root package dapat dibuild dengan `npm run build`.
+- [x] Root package lolos `npm run typecheck`.
+- [x] `npm pack --dry-run` berhasil menampilkan isi tarball.
+- [ ] Nama package sudah valid untuk npm.
+- [ ] Package name sudah dipastikan tersedia atau memang dimiliki akun npm.
+- [ ] Akun npm sudah login pada terminal yang digunakan.
+- [ ] Versi release sudah diputuskan.
+
+### Blocker yang Harus Diperbaiki
+
+Saat ini `package.json` menggunakan:
+
+```json
+"name": "whiteant-ops/twants"
+```
+
+Nama tersebut ditolak npm dengan error `Invalid name`. Target URL pada dokumen ini adalah package unscoped:
+
+```text
+https://www.npmjs.com/package/twants
+```
+
+Sebelum publish, ubah nama package menjadi:
+
+```json
+"name": "twants"
+```
+
+Selain itu, npm memberi warning karena `package.json` mendeklarasikan binary `cli/twants.mjs`, tetapi file tersebut belum tersedia. Pilih salah satu:
+
+- Hapus field `bin` jika CLI belum siap.
+- Tambahkan file `cli/twants.mjs` sebelum publish.
+
+Verifikasi kembali tanpa publish:
+
+```bash
+npm publish --dry-run --access public
+```
+
+Dry-run harus selesai tanpa error `Invalid name` dan tanpa warning binary yang tidak ditemukan.
+
+### Login npm
+
+Gunakan salah satu metode berikut:
+
+```bash
+npm login
+```
+
+atau, jika memakai token automation secara lokal:
+
+```bash
+npm config set //registry.npmjs.org/:_authToken=YOUR_NPM_TOKEN
+```
+
+Jangan menulis token ke repository, shell history bersama, screenshot, atau log CI. Setelah selesai, bersihkan token lokal bila tidak lagi diperlukan.
+
+Periksa akun aktif:
+
+```bash
+npm whoami
+```
+
+### Persiapan Release
+
+1. Pastikan perubahan sudah berada di branch `main`.
+2. Pastikan `package.json` dan lockfile yang relevan sudah committed.
+3. Pastikan versi belum pernah dipublikasikan:
+
+```bash
+npm view twants versions --json
+```
+
+4. Naikkan versi menggunakan npm agar `package.json` dan lockfile root tetap konsisten:
+
+```bash
+npm version patch
+```
+
+Untuk release minor atau major:
+
+```bash
+npm version minor
+npm version major
+```
+
+Jangan menggunakan versi yang sudah ada di registry. Untuk release pertama gunakan versi yang disepakati, misalnya `0.1.0`.
+
+### Validasi Sebelum Publish
+
+Jalankan dari folder root project:
+
+```bash
+npm install
+npm run typecheck
+npm run build
+npm pack --dry-run
+npm publish --dry-run --access public
+```
+
+Pastikan tarball hanya memuat file yang diperlukan:
+
+- `dist/`
+- `src/`
+- `README.md`
+- `LICENSE`
+- `package.json`
+
+Pastikan tidak ikut terpublikasi:
+
+- `docs/`
+- `demo/`
+- `examples/`
+- `.github/`
+- `node_modules/`
+- file secret atau log lokal
+
+### Publish Manual
+
+Setelah semua checklist lulus:
+
+```bash
+npm publish --access public
+```
+
+Jika npm meminta OTP, masukkan OTP langsung di terminal. Jangan menaruh OTP di file atau command yang akan disimpan.
+
+### Verifikasi Setelah Publish
+
+Periksa metadata:
+
+```bash
+npm view twants
+npm view twants version
+npm view twants dist-tags
+```
+
+Uji dari folder sementara:
+
+```bash
+mkdir npm-smoke-test
+cd npm-smoke-test
+npm init -y
+npm install twants
+```
+
+Pastikan import utama dan stylesheet dapat ditemukan:
+
+```bash
+node --input-type=module -e "import('twants').then(() => console.log('twants import ok'))"
+```
+
+Setelah publish berhasil, buat GitHub Release dengan tag versi yang sama, misalnya `v0.1.0`. Jangan publish ulang versi yang sama; npm menolak republish pada version yang identik.
+
+### Checklist Ringkas Manual npm
+
+- [ ] `name` diubah menjadi `twants` atau package scoped yang benar.
+- [ ] Field `bin` valid dan file CLI tersedia, atau field `bin` dihapus.
+- [ ] `npm whoami` menunjukkan akun publisher yang benar.
+- [ ] Package name tersedia atau dimiliki akun publisher.
+- [ ] Versi release belum ada di npm.
+- [ ] `npm run typecheck` sukses.
+- [ ] `npm run build` sukses.
+- [ ] `npm pack --dry-run` diperiksa.
+- [ ] `npm publish --dry-run --access public` sukses.
+- [ ] `npm publish --access public` sukses.
+- [ ] `npm view twants version` menunjukkan versi baru.
+- [ ] Instalasi smoke test dari folder sementara sukses.
+- [ ] GitHub Release menggunakan tag versi yang sama.
+
+---
+
 ## 8. Verifikasi CI
 
 Buat perubahan kecil atau gunakan commit pertama untuk memicu workflow CI.
