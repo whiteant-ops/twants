@@ -116,15 +116,18 @@ const sidebars: SidebarsConfig = {
       label: "Date & Time",
       items: [
         "components/calendar",
+        "components/date-picker",
       ],
     },
     {
       type: "category",
       label: "Other",
       items: [
+        "components/combobox",
         "components/collapsible",
         "components/scroll-area",
         "components/stepper",
+        "components/charts",
       ],
     },
     {
