@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TWANTS · Vanilla</title>
+</head>
+<body class="twants-mica" style="min-height:100vh">
+  <div class="twants-container" style="padding-block:2rem">
+    <h1 style="font-size:var(--twants-text-2xl);font-weight:var(--twants-font-semibold)">Vanilla + Vite + TWANTS</h1>
+    <button id="hi" class="twants-button twants-button-primary" style="margin-top:1rem">Say hello</button>
+  </div>
+  <script type="module">
+    import "twants/styles";
+    import { toast, ThemeSwitcher } from "twants";
+    ThemeSwitcher.init();
+    document.getElementById("hi").addEventListener("click", () =>
+      toast.show({ title: "Hello from TWANTS", description: "Framework-agnostic." })
+    );
+  </script>
+</body>
+</html>

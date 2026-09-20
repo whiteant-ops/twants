@@ -1,0 +1,26 @@
+{
+  "id": "components/button",
+  "title": "Button",
+  "description": "Buttons trigger actions and support semantic variants and sizes.",
+  "source": "@site/docs/components/button.md",
+  "sourceDirName": "components",
+  "slug": "/components/button",
+  "permalink": "/twants/docs/components/button",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/whiteant-ops/twants/tree/main/docs/docs/components/button.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Button"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Accessibility",
+    "permalink": "/twants/docs/design/accessibility"
+  },
+  "next": {
+    "title": "Laravel",
+    "permalink": "/twants/docs/integrations/laravel"
+  }
+}

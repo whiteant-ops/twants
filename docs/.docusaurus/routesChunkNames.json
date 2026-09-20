@@ -1,0 +1,82 @@
+{
+  "/twants/docs-293": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/twants/docs-8d8": {
+    "__comp": "a7bd4aaa",
+    "__props": "e3c84292"
+  },
+  "/twants/docs-a29": {
+    "__comp": "a94703ab"
+  },
+  "/twants/docs/changelog-f2d": {
+    "__comp": "17896441",
+    "content": "9beb87c2"
+  },
+  "/twants/docs/components/button-ac3": {
+    "__comp": "17896441",
+    "content": "9eb89d33"
+  },
+  "/twants/docs/contributing-0d5": {
+    "__comp": "17896441",
+    "content": "4d54d076"
+  },
+  "/twants/docs/design/accessibility-2e2": {
+    "__comp": "17896441",
+    "content": "7c0b81b2"
+  },
+  "/twants/docs/design/themes-621": {
+    "__comp": "17896441",
+    "content": "0d7d9b82"
+  },
+  "/twants/docs/design/tokens-ad6": {
+    "__comp": "17896441",
+    "content": "97d88a24"
+  },
+  "/twants/docs/getting-started/installation-44b": {
+    "__comp": "17896441",
+    "content": "54f44165"
+  },
+  "/twants/docs/getting-started/quick-start-1cf": {
+    "__comp": "17896441",
+    "content": "588bd741"
+  },
+  "/twants/docs/integrations/django-94b": {
+    "__comp": "17896441",
+    "content": "3165c660"
+  },
+  "/twants/docs/integrations/laravel-89c": {
+    "__comp": "17896441",
+    "content": "7210dcda"
+  },
+  "/twants/docs/integrations/tauri-a27": {
+    "__comp": "17896441",
+    "content": "d09b2d16"
+  },
+  "/twants/docs/integrations/vanilla-a40": {
+    "__comp": "17896441",
+    "content": "ddc42d85"
+  },
+  "/twants/docs/integrations/wails-f3c": {
+    "__comp": "17896441",
+    "content": "f15470dc"
+  },
+  "/twants/docs/intro-e99": {
+    "__comp": "17896441",
+    "content": "0e384e19"
+  },
+  "/twants/docs/license-6c2": {
+    "__comp": "17896441",
+    "content": "ac5280f2"
+  },
+  "/twants/-f0c": {
+    "__comp": "1df93b7f",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}

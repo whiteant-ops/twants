@@ -1,0 +1,2239 @@
+/* ============================================================
+   TWANTS — Components
+   ============================================================ */
+
+@layer components {
+  /* =========================================================
+     FOUNDATIONS
+     ========================================================= */
+  .twants-surface {
+    background: var(--twants-surface);
+    color: var(--twants-foreground);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+  }
+  .twants-surface-secondary {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+  .twants-divider {
+    height: 1px;
+    width: 100%;
+    background: var(--twants-border);
+    border: 0;
+  }
+  .twants-divider-vertical {
+    width: 1px;
+    height: 100%;
+    background: var(--twants-border);
+  }
+
+  /* =========================================================
+     BUTTONS & ACTIONS
+     ========================================================= */
+  .twants-button {
+    --twants-btn-bg: var(--twants-surface);
+    --twants-btn-fg: var(--twants-foreground);
+    --twants-btn-bd: var(--twants-border);
+    --twants-btn-bg-hover: var(--twants-surface-secondary);
+    --twants-btn-bg-active: var(--twants-surface-tertiary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 0.875rem;
+    height: 2.25rem;
+    font-size: var(--twants-text-base);
+    font-weight: var(--twants-font-medium);
+    font-family: var(--twants-font-sans);
+    line-height: 1;
+    color: var(--twants-btn-fg);
+    background: var(--twants-btn-bg);
+    border: 1px solid var(--twants-btn-bd);
+    border-radius: var(--twants-radius);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition:
+      background var(--twants-duration-fast) var(--twants-ease-standard),
+      border-color var(--twants-duration-fast) var(--twants-ease-standard),
+      color var(--twants-duration-fast) var(--twants-ease-standard),
+      transform var(--twants-duration-fast) var(--twants-ease-standard),
+      box-shadow var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-button:hover { background: var(--twants-btn-bg-hover); }
+  .twants-button:active { background: var(--twants-btn-bg-active); transform: translateY(0.5px); }
+  .twants-button:focus-visible {
+    outline: 2px solid var(--twants-focus-ring);
+    outline-offset: 2px;
+  }
+  .twants-button[disabled],
+  .twants-button[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .twants-button-primary {
+    --twants-btn-bg: var(--twants-primary);
+    --twants-btn-fg: var(--twants-primary-foreground);
+    --twants-btn-bd: transparent;
+    --twants-btn-bg-hover: var(--twants-primary-hover);
+    --twants-btn-bg-active: var(--twants-primary-active);
+    box-shadow: var(--twants-shadow-xs);
+  }
+  .twants-button-success {
+    --twants-btn-bg: var(--twants-success);
+    --twants-btn-fg: var(--twants-success-foreground);
+    --twants-btn-bd: transparent;
+    --twants-btn-bg-hover: color-mix(in srgb, var(--twants-success) 88%, black);
+    --twants-btn-bg-active: color-mix(in srgb, var(--twants-success) 78%, black);
+  }
+  .twants-button-danger {
+    --twants-btn-bg: var(--twants-danger);
+    --twants-btn-fg: var(--twants-danger-foreground);
+    --twants-btn-bd: transparent;
+    --twants-btn-bg-hover: color-mix(in srgb, var(--twants-danger) 88%, black);
+    --twants-btn-bg-active: color-mix(in srgb, var(--twants-danger) 78%, black);
+  }
+  .twants-button-warning {
+    --twants-btn-bg: var(--twants-warning);
+    --twants-btn-fg: var(--twants-warning-foreground);
+    --twants-btn-bd: transparent;
+  }
+  .twants-button-subtle {
+    --twants-btn-bg: transparent;
+    --twants-btn-bd: transparent;
+    --twants-btn-bg-hover: var(--twants-surface-secondary);
+  }
+  .twants-button-outline {
+    --twants-btn-bg: transparent;
+    --twants-btn-bd: var(--twants-border-strong);
+    --twants-btn-bg-hover: var(--twants-surface-secondary);
+  }
+
+  .twants-button-xs { height: 1.75rem; padding: 0 0.625rem; font-size: var(--twants-text-xs); }
+  .twants-button-sm { height: 2rem;    padding: 0 0.75rem;  font-size: var(--twants-text-sm); }
+  .twants-button-lg { height: 2.75rem; padding: 0 1.125rem; font-size: var(--twants-text-md); }
+  .twants-button-block { width: 100%; }
+
+  .twants-button-loading {
+    pointer-events: none;
+    color: transparent !important;
+    position: relative;
+  }
+  .twants-button-loading::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    color: var(--twants-btn-fg);
+    animation: twants-spin 0.8s linear infinite;
+  }
+
+  /* Icon button */
+  .twants-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--twants-radius);
+    color: var(--twants-foreground);
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-icon-button:hover { background: var(--twants-surface-secondary); }
+  .twants-icon-button:focus-visible {
+    outline: 2px solid var(--twants-focus-ring);
+    outline-offset: 2px;
+  }
+  .twants-icon-button-sm { width: 1.75rem; height: 1.75rem; }
+  .twants-icon-button-lg { width: 2.75rem; height: 2.75rem; }
+
+  /* Button group */
+  .twants-button-group {
+    display: inline-flex;
+    align-items: stretch;
+    border-radius: var(--twants-radius);
+    overflow: hidden;
+    border: 1px solid var(--twants-border);
+    background: var(--twants-surface);
+  }
+  .twants-button-group > .twants-button {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .twants-button-group > .twants-button + .twants-button {
+    border-left: 1px solid var(--twants-border);
+  }
+  .twants-button-group > .twants-button[aria-pressed="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+
+  /* Split button */
+  .twants-split-button {
+    display: inline-flex;
+    align-items: stretch;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius);
+    background: var(--twants-surface);
+    overflow: hidden;
+  }
+  .twants-split-button > .twants-button {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .twants-split-button > .twants-button + .twants-button {
+    border-left: 1px solid var(--twants-border);
+  }
+
+  /* Floating action button */
+  .twants-fab {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: var(--twants-radius-full);
+    background: var(--twants-primary);
+    color: var(--twants-primary-foreground);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--twants-shadow-lg);
+    border: 0;
+    cursor: pointer;
+    transition: transform var(--twants-duration) var(--twants-ease-standard);
+  }
+  .twants-fab:hover { transform: translateY(-1px); }
+
+  /* Toggle button */
+  .twants-toggle-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    border-radius: var(--twants-radius);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--twants-foreground);
+    cursor: pointer;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-toggle-button[aria-pressed="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+    border-color: color-mix(in srgb, var(--twants-primary) 30%, transparent);
+  }
+
+  /* Link button */
+  .twants-link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--twants-primary);
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .twants-link-button:hover { text-decoration: underline; }
+
+  /* Command button (with shortcut hint) */
+  .twants-command-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    border-radius: var(--twants-radius);
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--twants-foreground);
+    cursor: pointer;
+  }
+  .twants-command-button:hover { background: var(--twants-surface-secondary); }
+
+  /* =========================================================
+     FORMS
+     ========================================================= */
+  .twants-input,
+  .twants-textarea,
+  .twants-select {
+    display: block;
+    width: 100%;
+    min-height: 2.25rem;
+    padding: 0.375rem 0.75rem;
+    font-size: var(--twants-text-base);
+    font-family: var(--twants-font-sans);
+    color: var(--twants-foreground);
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-bottom-color: var(--twants-border-strong);
+    border-radius: var(--twants-radius);
+    transition:
+      border-color var(--twants-duration-fast) var(--twants-ease-standard),
+      box-shadow var(--twants-duration-fast) var(--twants-ease-standard),
+      background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-input::placeholder,
+  .twants-textarea::placeholder { color: var(--twants-foreground-muted); }
+
+  .twants-input:hover,
+  .twants-textarea:hover,
+  .twants-select:hover { border-color: var(--twants-border-strong); }
+
+  .twants-input:focus,
+  .twants-textarea:focus,
+  .twants-select:focus {
+    outline: none;
+    border-color: var(--twants-primary);
+    box-shadow: 0 0 0 1px var(--twants-primary),
+                0 0 0 4px color-mix(in srgb, var(--twants-primary) 20%, transparent);
+  }
+  .twants-input[disabled],
+  .twants-textarea[disabled],
+  .twants-select[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--twants-surface-secondary);
+  }
+  .twants-input-invalid {
+    border-color: var(--twants-danger);
+  }
+  .twants-input-invalid:focus {
+    border-color: var(--twants-danger);
+    box-shadow: 0 0 0 1px var(--twants-danger),
+                0 0 0 4px color-mix(in srgb, var(--twants-danger) 20%, transparent);
+  }
+
+  .twants-textarea {
+    min-height: 5.5rem;
+    padding: 0.5rem 0.75rem;
+    resize: vertical;
+    line-height: var(--twants-leading-normal);
+  }
+  .twants-select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, currentColor 50%),
+      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position:
+      calc(100% - 1.05rem) calc(50% + 1px),
+      calc(100% - 0.7rem)  calc(50% + 1px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 2rem;
+  }
+
+  .twants-input-sm { height: 2rem; font-size: var(--twants-text-sm); }
+  .twants-input-lg { height: 2.75rem; font-size: var(--twants-text-md); }
+
+  /* Input group */
+  .twants-input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius);
+    background: var(--twants-surface);
+    overflow: hidden;
+  }
+  .twants-input-group:focus-within {
+    border-color: var(--twants-primary);
+    box-shadow: 0 0 0 1px var(--twants-primary),
+                0 0 0 4px color-mix(in srgb, var(--twants-primary) 20%, transparent);
+  }
+  .twants-input-group > .twants-input,
+  .twants-input-group > .twants-select {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .twants-input-group > .twants-input:focus { box-shadow: none; }
+  .twants-input-group-addon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-sm);
+    border-right: 1px solid var(--twants-border);
+  }
+  .twants-input-group-addon:last-child {
+    border-right: 0;
+    border-left: 1px solid var(--twants-border);
+  }
+
+  /* Search input */
+  .twants-search {
+    position: relative;
+    display: block;
+  }
+  .twants-search > .twants-input { padding-left: 2.25rem; }
+  .twants-search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--twants-foreground-muted);
+    pointer-events: none;
+  }
+
+  /* Password input */
+  .twants-password { position: relative; display: block; }
+  .twants-password > .twants-input { padding-right: 2.5rem; }
+  .twants-password-toggle {
+    position: absolute;
+    right: 0.375rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground-muted);
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--twants-radius-sm);
+  }
+  .twants-password-toggle:hover {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+
+  /* Checkbox */
+  .twants-checkbox {
+    appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: var(--twants-radius-sm);
+    border: 1px solid var(--twants-border-strong);
+    background: var(--twants-surface);
+    cursor: pointer;
+    position: relative;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard),
+                border-color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-checkbox:checked,
+  .twants-checkbox:indeterminate {
+    background: var(--twants-primary);
+    border-color: var(--twants-primary);
+  }
+  .twants-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M3.5 8.5l3 3 6-6.5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+  }
+  .twants-checkbox:indeterminate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' stroke='white' stroke-width='2.4' stroke-linecap='round'><path d='M4 8h8'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+  }
+  .twants-checkbox:focus-visible {
+    outline: 2px solid var(--twants-focus-ring);
+    outline-offset: 2px;
+  }
+  .twants-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: var(--twants-text-base);
+    color: var(--twants-foreground);
+  }
+
+  /* Radio */
+  .twants-radio {
+    appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    border: 1px solid var(--twants-border-strong);
+    background: var(--twants-surface);
+    cursor: pointer;
+    position: relative;
+    transition: border-color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-radio:checked { border-color: var(--twants-primary); }
+  .twants-radio:checked::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--twants-primary);
+  }
+  .twants-radio:focus-visible {
+    outline: 2px solid var(--twants-focus-ring);
+    outline-offset: 2px;
+  }
+  .twants-radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: var(--twants-text-base);
+  }
+
+  /* Switch */
+  .twants-switch {
+    appearance: none;
+    width: 2.5rem;
+    height: 1.375rem;
+    border-radius: var(--twants-radius-full);
+    background: var(--twants-surface-tertiary);
+    border: 1px solid var(--twants-border-strong);
+    position: relative;
+    cursor: pointer;
+    transition: background var(--twants-duration) var(--twants-ease-standard),
+                border-color var(--twants-duration) var(--twants-ease-standard);
+  }
+  .twants-switch::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 50%;
+    background: var(--twants-surface);
+    box-shadow: var(--twants-shadow-xs);
+    transition: left var(--twants-duration) var(--twants-ease-standard),
+                background var(--twants-duration) var(--twants-ease-standard);
+  }
+  .twants-switch:checked {
+    background: var(--twants-primary);
+    border-color: var(--twants-primary);
+  }
+  .twants-switch:checked::after { left: calc(100% - 0.9375rem - 2px); }
+  .twants-switch:focus-visible {
+    outline: 2px solid var(--twants-focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Slider & range */
+  .twants-slider {
+    appearance: none;
+    width: 100%;
+    height: 1.25rem;
+    background: transparent;
+    cursor: pointer;
+  }
+  .twants-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    background: var(--twants-surface-tertiary);
+    border-radius: var(--twants-radius-full);
+  }
+  .twants-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border-strong);
+    box-shadow: var(--twants-shadow-sm);
+    transition: transform var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-slider::-webkit-slider-thumb:hover { transform: scale(1.1); }
+  .twants-slider::-moz-range-track {
+    height: 4px;
+    background: var(--twants-surface-tertiary);
+    border-radius: var(--twants-radius-full);
+  }
+  .twants-slider::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border-strong);
+  }
+  .twants-range {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .twants-range > output {
+    min-width: 2.5rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-sm);
+  }
+
+  /* Date & time picker */
+  .twants-date-picker,
+  .twants-time-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .twants-date-picker > .twants-input,
+  .twants-time-picker > .twants-input { width: auto; }
+
+  /* File upload */
+  .twants-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border: 1.5px dashed var(--twants-border-strong);
+    border-radius: var(--twants-radius-md);
+    background: var(--twants-surface);
+    color: var(--twants-foreground-secondary);
+    text-align: center;
+    cursor: pointer;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard),
+                border-color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-file-upload:hover,
+  .twants-file-upload[data-dragover="true"] {
+    border-color: var(--twants-primary);
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+
+  /* Form field wrapper */
+  .twants-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .twants-field-label {
+    font-size: var(--twants-text-sm);
+    font-weight: var(--twants-font-medium);
+    color: var(--twants-foreground);
+  }
+  .twants-field-label-required::after {
+    content: " *";
+    color: var(--twants-danger);
+  }
+  .twants-field-hint {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-field-error {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-danger);
+  }
+
+  /* OTP input */
+  .twants-otp {
+    display: inline-flex;
+    gap: 0.5rem;
+  }
+  .twants-otp > input {
+    width: 2.5rem;
+    height: 2.75rem;
+    text-align: center;
+    font-size: var(--twants-text-lg);
+    font-weight: var(--twants-font-semibold);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius);
+    background: var(--twants-surface);
+    color: var(--twants-foreground);
+  }
+  .twants-otp > input:focus {
+    outline: none;
+    border-color: var(--twants-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--twants-primary) 25%, transparent);
+  }
+
+  /* =========================================================
+     NAVIGATION
+     ========================================================= */
+  .twants-navbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 3rem;
+    padding: 0 1rem;
+    background: color-mix(in srgb, var(--twants-surface) 85%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--twants-border);
+    position: sticky;
+    top: 0;
+    z-index: var(--twants-z-sticky);
+  }
+  .twants-navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--twants-font-semibold);
+    color: var(--twants-foreground);
+  }
+  .twants-navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-left: auto;
+  }
+  .twants-navbar-link {
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--twants-radius);
+    color: var(--twants-foreground-secondary);
+    font-size: var(--twants-text-base);
+    text-decoration: none;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard),
+                color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-navbar-link:hover {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+  .twants-navbar-link[aria-current="page"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+
+  /* Sidebar */
+  .twants-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 100%;
+    padding: 0.75rem;
+    background: var(--twants-surface);
+    border-right: 1px solid var(--twants-border);
+    overflow-y: auto;
+  }
+  .twants-sidebar-section {
+    margin-bottom: 0.75rem;
+  }
+  .twants-sidebar-section-title {
+    padding: 0.375rem 0.5rem;
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--twants-foreground-muted);
+  }
+  .twants-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.4375rem 0.625rem;
+    border-radius: var(--twants-radius);
+    color: var(--twants-foreground-secondary);
+    font-size: var(--twants-text-base);
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard),
+                color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-sidebar-item:hover {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+  .twants-sidebar-item[aria-current="page"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+    font-weight: var(--twants-font-medium);
+  }
+  .twants-sidebar-item[aria-current="page"]::before {
+    content: "";
+    width: 3px;
+    height: 1rem;
+    margin-left: -0.625rem;
+    margin-right: 0.375rem;
+    background: var(--twants-primary);
+    border-radius: var(--twants-radius-full);
+  }
+
+  /* Breadcrumb */
+  .twants-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-breadcrumb a {
+    color: var(--twants-foreground-secondary);
+    text-decoration: none;
+    padding: 0.125rem 0.375rem;
+    border-radius: var(--twants-radius-sm);
+  }
+  .twants-breadcrumb a:hover {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+  .twants-breadcrumb-sep { color: var(--twants-foreground-muted); }
+
+  /* Tabs */
+  .twants-tabs {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-bottom: 1px solid var(--twants-border);
+  }
+  .twants-tab {
+    position: relative;
+    padding: 0.5rem 0.875rem;
+    font-size: var(--twants-text-base);
+    font-weight: var(--twants-font-medium);
+    color: var(--twants-foreground-secondary);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    border-radius: var(--twants-radius) var(--twants-radius) 0 0;
+    transition: color var(--twants-duration-fast) var(--twants-ease-standard),
+                background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-tab:hover { color: var(--twants-foreground); background: var(--twants-surface-secondary); }
+  .twants-tab[aria-selected="true"] { color: var(--twants-foreground); }
+  .twants-tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: -1px;
+    height: 2px;
+    background: var(--twants-primary);
+    border-radius: var(--twants-radius-full);
+  }
+
+  /* Vertical tabs */
+  .twants-vtabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    border-right: 1px solid var(--twants-border);
+    padding-right: 0.5rem;
+    min-width: 12rem;
+  }
+  .twants-vtab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--twants-radius);
+    border: 0;
+    background: transparent;
+    color: var(--twants-foreground-secondary);
+    text-align: left;
+    cursor: pointer;
+    font-size: var(--twants-text-base);
+  }
+  .twants-vtab[aria-selected="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+    font-weight: var(--twants-font-medium);
+  }
+  .twants-vtab:hover:not([aria-selected="true"]) {
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+  }
+
+  /* Pagination */
+  .twants-pagination {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .twants-pagination-button {
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: var(--twants-radius);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--twants-foreground-secondary);
+    cursor: pointer;
+    font-size: var(--twants-text-sm);
+    font-variant-numeric: tabular-nums;
+  }
+  .twants-pagination-button:hover { background: var(--twants-surface-secondary); color: var(--twants-foreground); }
+  .twants-pagination-button[aria-current="page"] {
+    background: var(--twants-primary);
+    color: var(--twants-primary-foreground);
+  }
+
+  /* Stepper */
+  .twants-stepper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .twants-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-sm);
+  }
+  .twants-step-marker {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--twants-radius-full);
+    border: 1px solid var(--twants-border-strong);
+    background: var(--twants-surface);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--twants-font-semibold);
+    font-size: var(--twants-text-xs);
+  }
+  .twants-step[data-state="active"] { color: var(--twants-foreground); }
+  .twants-step[data-state="active"] .twants-step-marker {
+    background: var(--twants-primary);
+    color: var(--twants-primary-foreground);
+    border-color: var(--twants-primary);
+  }
+  .twants-step[data-state="complete"] .twants-step-marker {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+    border-color: var(--twants-primary);
+  }
+  .twants-step-divider {
+    flex: 1;
+    height: 1px;
+    background: var(--twants-border);
+  }
+
+  /* Menu / dropdown */
+  .twants-menu {
+    min-width: 12rem;
+    padding: 0.25rem;
+    background: var(--twants-surface-elevated);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    box-shadow: var(--twants-shadow-md);
+    list-style: none;
+    margin: 0;
+    z-index: var(--twants-z-dropdown);
+  }
+  .twants-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.4375rem 0.625rem;
+    border-radius: var(--twants-radius-sm);
+    color: var(--twants-foreground);
+    background: transparent;
+    border: 0;
+    font-size: var(--twants-text-base);
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .twants-menu-item:hover { background: var(--twants-surface-secondary); }
+  .twants-menu-item[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+  .twants-menu-item-shortcut {
+    margin-left: auto;
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-xs);
+    font-family: var(--twants-font-mono);
+  }
+  .twants-menu-sep {
+    height: 1px;
+    background: var(--twants-border);
+    margin: 0.25rem 0.375rem;
+  }
+  .twants-menu-label {
+    padding: 0.375rem 0.625rem;
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Context menu (same styling as menu, used with right-click) */
+  .twants-context-menu {
+    position: fixed;
+    z-index: var(--twants-z-popover);
+  }
+
+  /* Command palette */
+  .twants-command-palette {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+    background: var(--twants-overlay);
+    z-index: var(--twants-z-modal);
+  }
+  .twants-command-palette-panel {
+    width: min(640px, 92vw);
+    background: var(--twants-surface-elevated);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-lg);
+    box-shadow: var(--twants-shadow-xl);
+    overflow: hidden;
+    animation: twants-slide-down var(--twants-duration-slow) var(--twants-ease-decel);
+  }
+  .twants-command-palette-input {
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: var(--twants-text-md);
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--twants-border);
+    color: var(--twants-foreground);
+    outline: none;
+  }
+  .twants-command-palette-list {
+    max-height: 22rem;
+    overflow-y: auto;
+    padding: 0.375rem;
+  }
+
+  /* Bottom navigation */
+  .twants-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 3.25rem;
+    border-top: 1px solid var(--twants-border);
+    background: color-mix(in srgb, var(--twants-surface) 90%, transparent);
+    backdrop-filter: blur(14px);
+  }
+  .twants-bottom-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-xs);
+    text-decoration: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .twants-bottom-nav-item[aria-current="page"] { color: var(--twants-primary); }
+
+  /* =========================================================
+     DATA DISPLAY
+     ========================================================= */
+  .twants-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--twants-surface);
+    color: var(--twants-foreground);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-lg);
+    box-shadow: var(--twants-shadow-xs);
+    overflow: hidden;
+    transition: box-shadow var(--twants-duration) var(--twants-ease-standard),
+                border-color var(--twants-duration) var(--twants-ease-standard);
+  }
+  .twants-card:hover { box-shadow: var(--twants-shadow); }
+  .twants-card-header {
+    padding: 1rem 1.125rem;
+    border-bottom: 1px solid var(--twants-border);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .twants-card-title {
+    font-size: var(--twants-text-md);
+    font-weight: var(--twants-font-semibold);
+    color: var(--twants-foreground);
+  }
+  .twants-card-description {
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-secondary);
+  }
+  .twants-card-body { padding: 1.125rem; }
+  .twants-card-footer {
+    padding: 0.875rem 1.125rem;
+    border-top: 1px solid var(--twants-border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--twants-surface-secondary);
+  }
+
+  /* Stat card */
+  .twants-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.125rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-lg);
+  }
+  .twants-stat-label {
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-stat-value {
+    font-size: var(--twants-text-2xl);
+    font-weight: var(--twants-font-semibold);
+    color: var(--twants-foreground);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .twants-stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-medium);
+  }
+  .twants-stat-trend[data-trend="up"]   { color: var(--twants-success); }
+  .twants-stat-trend[data-trend="down"] { color: var(--twants-danger); }
+
+  /* Table */
+  .twants-table-wrap {
+    width: 100%;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    overflow: hidden;
+    background: var(--twants-surface);
+  }
+  .twants-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--twants-text-base);
+    color: var(--twants-foreground);
+  }
+  .twants-table thead th {
+    text-align: left;
+    font-weight: var(--twants-font-semibold);
+    font-size: var(--twants-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--twants-foreground-muted);
+    padding: 0.625rem 0.875rem;
+    background: var(--twants-surface-secondary);
+    border-bottom: 1px solid var(--twants-border);
+  }
+  .twants-table tbody td {
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid var(--twants-border);
+    vertical-align: middle;
+  }
+  .twants-table tbody tr:last-child td { border-bottom: 0; }
+  .twants-table tbody tr:hover { background: var(--twants-surface-secondary); }
+  .twants-table-sticky thead th { position: sticky; top: 0; z-index: 1; }
+  .twants-table-compact tbody td,
+  .twants-table-compact thead th { padding: 0.375rem 0.625rem; }
+  .twants-table-zebra tbody tr:nth-child(even) { background: var(--twants-surface-secondary); }
+
+  /* Data grid (extends table, adds toolbar + cells) */
+  .twants-data-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .twants-data-grid-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+  }
+
+  /* List & list item */
+  .twants-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    list-style: none;
+    margin: 0;
+  }
+  .twants-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--twants-radius-sm);
+    color: var(--twants-foreground);
+    cursor: pointer;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-list-item:hover { background: var(--twants-surface-secondary); }
+  .twants-list-item[aria-selected="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+  .twants-list-item-title {
+    font-size: var(--twants-text-base);
+    font-weight: var(--twants-font-medium);
+  }
+  .twants-list-item-subtitle {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+
+  /* Avatar */
+  .twants-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--twants-radius-full);
+    background: var(--twants-surface-tertiary);
+    color: var(--twants-foreground-secondary);
+    font-size: var(--twants-text-sm);
+    font-weight: var(--twants-font-semibold);
+    overflow: hidden;
+    border: 1px solid var(--twants-border);
+  }
+  .twants-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .twants-avatar-xs { width: 1.25rem; height: 1.25rem; font-size: 0.625rem; }
+  .twants-avatar-sm { width: 1.5rem;  height: 1.5rem;  font-size: var(--twants-text-xs); }
+  .twants-avatar-lg { width: 2.75rem; height: 2.75rem; font-size: var(--twants-text-md); }
+  .twants-avatar-xl { width: 3.5rem;  height: 3.5rem;  font-size: var(--twants-text-lg); }
+  .twants-avatar-group { display: inline-flex; }
+  .twants-avatar-group > .twants-avatar + .twants-avatar {
+    margin-left: -0.5rem;
+    border: 2px solid var(--twants-surface);
+  }
+
+  /* Badge */
+  .twants-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    height: 1.25rem;
+    border-radius: var(--twants-radius-full);
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-medium);
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground-secondary);
+    border: 1px solid var(--twants-border);
+    white-space: nowrap;
+  }
+  .twants-badge-primary { background: var(--twants-primary-subtle); color: var(--twants-primary); border-color: transparent; }
+  .twants-badge-success { background: var(--twants-success-subtle); color: var(--twants-success); border-color: transparent; }
+  .twants-badge-warning { background: var(--twants-warning-subtle); color: var(--twants-warning); border-color: transparent; }
+  .twants-badge-danger  { background: var(--twants-danger-subtle);  color: var(--twants-danger);  border-color: transparent; }
+
+  /* Chip / tag */
+  .twants-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    height: 1.75rem;
+    border-radius: var(--twants-radius-full);
+    background: var(--twants-surface-secondary);
+    border: 1px solid var(--twants-border);
+    color: var(--twants-foreground);
+    font-size: var(--twants-text-xs);
+  }
+  .twants-chip-close {
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground-muted);
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--twants-radius-full);
+  }
+  .twants-chip-close:hover { background: var(--twants-surface-tertiary); color: var(--twants-foreground); }
+
+  .twants-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--twants-radius-sm);
+    background: var(--twants-surface-secondary);
+    border: 1px solid var(--twants-border);
+    color: var(--twants-foreground-secondary);
+    font-size: var(--twants-text-xs);
+    font-family: var(--twants-font-mono);
+  }
+
+  /* Progress */
+  .twants-progress {
+    width: 100%;
+    height: 6px;
+    border-radius: var(--twants-radius-full);
+    background: var(--twants-surface-tertiary);
+    overflow: hidden;
+  }
+  .twants-progress-bar {
+    height: 100%;
+    background: var(--twants-primary);
+    border-radius: inherit;
+    transition: width var(--twants-duration-slow) var(--twants-ease-standard);
+  }
+  .twants-progress-indeterminate .twants-progress-bar {
+    width: 35% !important;
+    animation: twants-indeterminate 1.4s linear infinite;
+  }
+
+  /* Circular progress */
+  .twants-circular-progress {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .twants-circular-progress svg { transform: rotate(-90deg); }
+  .twants-circular-progress-track {
+    fill: none;
+    stroke: var(--twants-surface-tertiary);
+    stroke-width: 6;
+  }
+  .twants-circular-progress-value {
+    fill: none;
+    stroke: var(--twants-primary);
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset var(--twants-duration-slow) var(--twants-ease-standard);
+  }
+  .twants-circular-progress-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-semibold);
+  }
+
+  /* Timeline */
+  .twants-timeline {
+    position: relative;
+    padding-left: 1.25rem;
+    list-style: none;
+    margin: 0;
+  }
+  .twants-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0.375rem;
+    bottom: 0.375rem;
+    left: 0.375rem;
+    width: 2px;
+    background: var(--twants-border);
+  }
+  .twants-timeline-item {
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  .twants-timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    top: 0.375rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--twants-surface);
+    border: 2px solid var(--twants-primary);
+  }
+  .twants-timeline-item-title {
+    font-size: var(--twants-text-base);
+    font-weight: var(--twants-font-medium);
+  }
+  .twants-timeline-item-time {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+
+  /* Empty state */
+  .twants-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--twants-foreground-secondary);
+    border: 1px dashed var(--twants-border);
+    border-radius: var(--twants-radius-lg);
+    background: var(--twants-surface);
+  }
+  .twants-empty-icon {
+    color: var(--twants-foreground-muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--twants-radius-full);
+    background: var(--twants-surface-secondary);
+  }
+  .twants-empty-title {
+    font-size: var(--twants-text-md);
+    font-weight: var(--twants-font-semibold);
+    color: var(--twants-foreground);
+  }
+  .twants-empty-description {
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-muted);
+    max-width: 30rem;
+  }
+
+  /* =========================================================
+     FEEDBACK
+     ========================================================= */
+  .twants-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0.875rem;
+    border-radius: var(--twants-radius-md);
+    border: 1px solid var(--twants-border);
+    background: var(--twants-surface);
+    color: var(--twants-foreground);
+    font-size: var(--twants-text-sm);
+  }
+  .twants-alert-icon { flex-shrink: 0; margin-top: 0.0625rem; }
+  .twants-alert-title { font-weight: var(--twants-font-semibold); }
+  .twants-alert-success { background: var(--twants-success-subtle); border-color: color-mix(in srgb, var(--twants-success) 25%, transparent); color: var(--twants-success); }
+  .twants-alert-warning { background: var(--twants-warning-subtle); border-color: color-mix(in srgb, var(--twants-warning) 25%, transparent); color: var(--twants-warning); }
+  .twants-alert-danger  { background: var(--twants-danger-subtle);  border-color: color-mix(in srgb, var(--twants-danger) 25%, transparent);  color: var(--twants-danger); }
+  .twants-alert-info    { background: var(--twants-info-subtle);    border-color: color-mix(in srgb, var(--twants-info) 25%, transparent);    color: var(--twants-info); }
+
+  /* Toast */
+  .twants-toast-viewport {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: var(--twants-z-toast);
+    pointer-events: none;
+  }
+  .twants-toast {
+    pointer-events: auto;
+    min-width: 18rem;
+    max-width: 24rem;
+    padding: 0.75rem 0.875rem;
+    border-radius: var(--twants-radius-md);
+    background: var(--twants-surface-elevated);
+    border: 1px solid var(--twants-border);
+    box-shadow: var(--twants-shadow-lg);
+    color: var(--twants-foreground);
+    font-size: var(--twants-text-sm);
+    display: flex;
+    gap: 0.625rem;
+    align-items: flex-start;
+    animation: twants-slide-in-right var(--twants-duration-slow) var(--twants-ease-decel);
+  }
+  .twants-toast-title { font-weight: var(--twants-font-semibold); }
+  .twants-toast-description { color: var(--twants-foreground-secondary); }
+
+  /* Notification (in-app banner, similar but inline) */
+  .twants-notification {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem 0.875rem;
+    border-left: 3px solid var(--twants-primary);
+    background: var(--twants-surface);
+    border-radius: var(--twants-radius-md);
+    box-shadow: var(--twants-shadow-sm);
+  }
+
+  /* Tooltip */
+  .twants-tooltip {
+    position: relative;
+    display: inline-flex;
+  }
+  .twants-tooltip-content {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(2px);
+    padding: 0.3125rem 0.5rem;
+    background: var(--twants-foreground);
+    color: var(--twants-background);
+    font-size: var(--twants-text-xs);
+    border-radius: var(--twants-radius-sm);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--twants-duration-fast) var(--twants-ease-standard),
+                transform var(--twants-duration-fast) var(--twants-ease-standard);
+    z-index: var(--twants-z-tooltip);
+  }
+  .twants-tooltip:hover .twants-tooltip-content,
+  .twants-tooltip:focus-within .twants-tooltip-content {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Popover */
+  .twants-popover {
+    position: absolute;
+    min-width: 14rem;
+    padding: 0.875rem;
+    background: var(--twants-surface-elevated);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    box-shadow: var(--twants-shadow-lg);
+    color: var(--twants-foreground);
+    z-index: var(--twants-z-popover);
+  }
+
+  /* Modal / dialog */
+  .twants-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--twants-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: var(--twants-z-modal);
+    animation: twants-fade-in var(--twants-duration) var(--twants-ease-standard);
+  }
+  .twants-modal {
+    width: 100%;
+    max-width: 32rem;
+    background: var(--twants-surface-elevated);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-lg);
+    box-shadow: var(--twants-shadow-xl);
+    color: var(--twants-foreground);
+    display: flex;
+    flex-direction: column;
+    animation: twants-scale-in var(--twants-duration-slow) var(--twants-ease-decel);
+    max-height: calc(100vh - 2rem);
+    overflow: hidden;
+  }
+  .twants-modal-header {
+    padding: 1rem 1.125rem;
+    border-bottom: 1px solid var(--twants-border);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .twants-modal-title {
+    font-size: var(--twants-text-md);
+    font-weight: var(--twants-font-semibold);
+  }
+  .twants-modal-body { padding: 1.125rem; overflow-y: auto; }
+  .twants-modal-footer {
+    padding: 0.875rem 1.125rem;
+    border-top: 1px solid var(--twants-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  /* Confirm dialog uses modal width smaller */
+  .twants-confirm-dialog { max-width: 26rem; }
+
+  /* Drawer */
+  .twants-drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: min(24rem, 92vw);
+    background: var(--twants-surface-elevated);
+    border-left: 1px solid var(--twants-border);
+    box-shadow: var(--twants-shadow-xl);
+    display: flex;
+    flex-direction: column;
+    z-index: var(--twants-z-modal);
+    animation: twants-slide-in-right var(--twants-duration-slow) var(--twants-ease-decel);
+  }
+  .twants-drawer-left {
+    right: auto;
+    left: 0;
+    border-left: 0;
+    border-right: 1px solid var(--twants-border);
+    animation: twants-slide-in-left var(--twants-duration-slow) var(--twants-ease-decel);
+  }
+
+  /* Loading state */
+  .twants-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--twants-foreground-secondary);
+    font-size: var(--twants-text-sm);
+  }
+  .twants-spinner {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--twants-foreground) 20%, transparent);
+    border-top-color: var(--twants-primary);
+    animation: twants-spin 0.75s linear infinite;
+  }
+
+  /* Skeleton */
+  .twants-skeleton {
+    position: relative;
+    overflow: hidden;
+    background: var(--twants-surface-tertiary);
+    border-radius: var(--twants-radius-sm);
+  }
+  .twants-skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--twants-surface) 60%, transparent),
+      transparent
+    );
+    animation: twants-shimmer 1.4s linear infinite;
+  }
+  .twants-skeleton-text { height: 0.75rem; }
+  .twants-skeleton-title { height: 1rem; }
+  .twants-skeleton-avatar { width: 2rem; height: 2rem; border-radius: 50%; }
+
+  /* Error state */
+  .twants-error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--twants-foreground-secondary);
+    border: 1px solid color-mix(in srgb, var(--twants-danger) 25%, var(--twants-border));
+    background: var(--twants-danger-subtle);
+    border-radius: var(--twants-radius-lg);
+  }
+  .twants-error-state-title {
+    color: var(--twants-danger);
+    font-weight: var(--twants-font-semibold);
+  }
+
+  /* =========================================================
+     LAYOUT
+     ========================================================= */
+  .twants-container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    max-width: 1280px;
+  }
+  .twants-container-sm { max-width: 640px; }
+  .twants-container-lg { max-width: 1536px; }
+
+  .twants-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--twants-stack-gap, 0.75rem);
+  }
+  .twants-stack-h {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .twants-grid {
+    display: grid;
+    gap: var(--twants-grid-gap, 1rem);
+    grid-template-columns: repeat(var(--twants-grid-cols, 12), minmax(0, 1fr));
+  }
+  .twants-grid-auto {
+    grid-template-columns: repeat(auto-fill, minmax(var(--twants-grid-min, 14rem), 1fr));
+  }
+
+  /* Split pane */
+  .twants-split-pane {
+    display: grid;
+    grid-template-columns: var(--twants-split, 1fr 1fr);
+    height: 100%;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    overflow: hidden;
+    background: var(--twants-surface);
+  }
+  .twants-split-pane > * + * { border-left: 1px solid var(--twants-border); }
+
+  /* Resizable panel (visual handle; JS adds drag logic) */
+  .twants-resizable {
+    display: grid;
+    grid-template-columns: var(--twants-split, 16rem 1fr);
+    height: 100%;
+  }
+  .twants-resize-handle {
+    width: 4px;
+    cursor: col-resize;
+    background: transparent;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-resize-handle:hover,
+  .twants-resize-handle[data-dragging="true"] { background: var(--twants-primary); }
+
+  /* Accordion */
+  .twants-accordion {
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    overflow: hidden;
+    background: var(--twants-surface);
+  }
+  .twants-accordion-item + .twants-accordion-item {
+    border-top: 1px solid var(--twants-border);
+  }
+  .twants-accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 0.875rem;
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground);
+    font-weight: var(--twants-font-medium);
+    font-size: var(--twants-text-base);
+    cursor: pointer;
+    text-align: left;
+  }
+  .twants-accordion-trigger:hover { background: var(--twants-surface-secondary); }
+  .twants-accordion-trigger[aria-expanded="true"] .twants-accordion-chevron {
+    transform: rotate(180deg);
+  }
+  .twants-accordion-chevron {
+    transition: transform var(--twants-duration) var(--twants-ease-standard);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-accordion-panel {
+    padding: 0 0.875rem 0.875rem;
+    color: var(--twants-foreground-secondary);
+    font-size: var(--twants-text-sm);
+  }
+
+  /* Collapsible panel */
+  .twants-collapsible {
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    background: var(--twants-surface);
+  }
+
+  /* Scroll area */
+  .twants-scroll {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--twants-border-strong) transparent;
+  }
+  .twants-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+  .twants-scroll::-webkit-scrollbar-track { background: transparent; }
+  .twants-scroll::-webkit-scrollbar-thumb {
+    background: var(--twants-border-strong);
+    border-radius: var(--twants-radius-full);
+    border: 2px solid var(--twants-surface);
+  }
+  .twants-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--twants-foreground-muted);
+  }
+
+  /* Aspect ratio */
+  .twants-aspect-square { aspect-ratio: 1 / 1; }
+  .twants-aspect-video  { aspect-ratio: 16 / 9; }
+  .twants-aspect-photo  { aspect-ratio: 4 / 3; }
+  .twants-aspect-wide   { aspect-ratio: 21 / 9; }
+
+  /* =========================================================
+     MEDIA
+     ========================================================= */
+  .twants-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--twants-radius-md);
+  }
+
+  .twants-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    gap: 0.5rem;
+  }
+  .twants-image-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--twants-radius-md);
+    background: var(--twants-surface-secondary);
+    cursor: pointer;
+  }
+  .twants-image-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--twants-duration-slow) var(--twants-ease-standard);
+  }
+  .twants-image-gallery-item:hover img { transform: scale(1.03); }
+
+  /* Carousel */
+  .twants-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--twants-radius-lg);
+    background: var(--twants-surface-secondary);
+  }
+  .twants-carousel-track {
+    display: flex;
+    transition: transform var(--twants-duration-slow) var(--twants-ease-standard);
+  }
+  .twants-carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 14rem;
+  }
+  .twants-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--twants-surface) 85%, transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--twants-border);
+    color: var(--twants-foreground);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .twants-carousel-control-prev { left: 0.5rem; }
+  .twants-carousel-control-next { right: 0.5rem; }
+  .twants-carousel-dots {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.375rem;
+  }
+  .twants-carousel-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--twants-foreground) 30%, transparent);
+    border: 0;
+    cursor: pointer;
+  }
+  .twants-carousel-dot[aria-current="true"] { background: var(--twants-primary); }
+
+  .twants-video {
+    display: block;
+    width: 100%;
+    border-radius: var(--twants-radius-lg);
+    background: #000;
+  }
+
+  .twants-audio {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    width: 100%;
+  }
+  .twants-audio > audio { width: 100%; }
+
+  /* =========================================================
+     ADVANCED UI
+     ========================================================= */
+  .twants-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 2px;
+    padding: 0.5rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+  }
+  .twants-calendar-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.25rem 0.5rem;
+  }
+  .twants-calendar-weekday {
+    text-align: center;
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+    padding: 0.25rem 0;
+  }
+  .twants-calendar-day {
+    aspect-ratio: 1;
+    border-radius: var(--twants-radius-sm);
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground);
+    cursor: pointer;
+    font-size: var(--twants-text-sm);
+  }
+  .twants-calendar-day:hover { background: var(--twants-surface-secondary); }
+  .twants-calendar-day[data-outside="true"] { color: var(--twants-foreground-muted); }
+  .twants-calendar-day[aria-current="date"] {
+    background: var(--twants-primary);
+    color: var(--twants-primary-foreground);
+    font-weight: var(--twants-font-semibold);
+  }
+
+  /* Kanban */
+  .twants-kanban {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(16rem, 1fr);
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  .twants-kanban-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--twants-surface-secondary);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+  }
+  .twants-kanban-column-title {
+    font-size: var(--twants-text-sm);
+    font-weight: var(--twants-font-semibold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .twants-kanban-card {
+    padding: 0.75rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    box-shadow: var(--twants-shadow-xs);
+    cursor: grab;
+  }
+  .twants-kanban-card:active { cursor: grabbing; }
+
+  /* Tree view */
+  .twants-tree {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: var(--twants-text-base);
+  }
+  .twants-tree ul { list-style: none; padding-left: 1rem; margin: 0; }
+  .twants-tree-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.375rem;
+    border-radius: var(--twants-radius-sm);
+    cursor: pointer;
+    color: var(--twants-foreground);
+  }
+  .twants-tree-item:hover { background: var(--twants-surface-secondary); }
+  .twants-tree-item[aria-selected="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+  .twants-tree-chevron {
+    width: 1rem;
+    height: 1rem;
+    transition: transform var(--twants-duration) var(--twants-ease-standard);
+  }
+  .twants-tree-item[aria-expanded="true"] .twants-tree-chevron { transform: rotate(90deg); }
+
+  /* File explorer */
+  .twants-file-explorer {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    min-height: 20rem;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    overflow: hidden;
+    background: var(--twants-surface);
+  }
+  .twants-file-explorer-sidebar {
+    border-right: 1px solid var(--twants-border);
+    padding: 0.5rem;
+    background: var(--twants-surface-secondary);
+    overflow-y: auto;
+  }
+  .twants-file-explorer-content { padding: 0.75rem; overflow-y: auto; }
+
+  /* Activity feed */
+  .twants-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .twants-activity-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--twants-radius-md);
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+  }
+  .twants-activity-meta {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+
+  /* Command bar */
+  .twants-command-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.5rem;
+    background: color-mix(in srgb, var(--twants-surface) 92%, transparent);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--twants-shadow-sm);
+  }
+  .twants-command-bar-sep {
+    width: 1px;
+    height: 1.25rem;
+    background: var(--twants-border);
+    margin: 0 0.25rem;
+  }
+
+  /* Toolbar */
+  .twants-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+  }
+  .twants-toolbar-button {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--twants-radius-sm);
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground);
+    cursor: pointer;
+  }
+  .twants-toolbar-button:hover { background: var(--twants-surface-secondary); }
+  .twants-toolbar-button[aria-pressed="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+
+  /* Rich text toolbar (extends toolbar) */
+  .twants-rte-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.125rem;
+    padding: 0.25rem;
+    border: 1px solid var(--twants-border);
+    border-bottom: 0;
+    border-radius: var(--twants-radius-md) var(--twants-radius-md) 0 0;
+    background: var(--twants-surface-secondary);
+  }
+  .twants-rte-content {
+    min-height: 8rem;
+    padding: 0.75rem;
+    border: 1px solid var(--twants-border);
+    border-radius: 0 0 var(--twants-radius-md) var(--twants-radius-md);
+    background: var(--twants-surface);
+    color: var(--twants-foreground);
+    font-size: var(--twants-text-base);
+    line-height: var(--twants-leading-relaxed);
+  }
+
+  /* Dashboard layout */
+  .twants-dashboard {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: 3rem 1fr;
+    grid-template-areas:
+      "sidebar topbar"
+      "sidebar main";
+    height: 100vh;
+    background: var(--twants-background);
+  }
+  .twants-dashboard-sidebar { grid-area: sidebar; min-height: 0; overflow: hidden; }
+  .twants-dashboard-topbar  { grid-area: topbar; min-height: 0; }
+  .twants-dashboard-main    { grid-area: main; padding: 1rem; overflow-y: auto; }
+
+  /* App frame / window */
+  .twants-app-frame {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--twants-background);
+    color: var(--twants-foreground);
+    overflow: hidden;
+  }
+
+  /* Title bar */
+  .twants-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.25rem;
+    padding: 0 0.25rem 0 0.75rem;
+    background: color-mix(in srgb, var(--twants-surface) 92%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--twants-border);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .twants-title-bar-title {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-secondary);
+    font-weight: var(--twants-font-medium);
+  }
+  .twants-title-bar-controls {
+    margin-left: auto;
+    display: flex;
+    gap: 0;
+  }
+  .twants-title-bar-btn {
+    width: 2.75rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground-secondary);
+    cursor: pointer;
+  }
+  .twants-title-bar-btn:hover { background: var(--twants-surface-secondary); color: var(--twants-foreground); }
+  .twants-title-bar-btn-close:hover { background: #e81123; color: #fff; }
+
+  /* Status bar */
+  .twants-status-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    height: 1.75rem;
+    padding: 0 0.75rem;
+    background: var(--twants-surface);
+    border-top: 1px solid var(--twants-border);
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-xs);
+    font-variant-numeric: tabular-nums;
+  }
+  .twants-status-bar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  /* Settings panel */
+  .twants-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+  }
+  .twants-settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .twants-settings-group-title {
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--twants-foreground-muted);
+  }
+  .twants-settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--twants-border);
+  }
+  .twants-settings-row:last-child { border-bottom: 0; }
+  .twants-settings-row-label { font-size: var(--twants-text-base); }
+  .twants-settings-row-description {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+}
+
+/* =========================================================
+   Keyframes
+   ========================================================= */
+@keyframes twants-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes twants-indeterminate {
+  0%   { margin-left: -35%; }
+  100% { margin-left: 100%; }
+}
+@keyframes twants-shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes twants-fade-in {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes twants-scale-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes twants-slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes twants-slide-in-right {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes twants-slide-in-left {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

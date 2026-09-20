@@ -1,0 +1,26 @@
+{
+  "id": "integrations/wails",
+  "title": "Wails",
+  "description": "TWANTS works in the Wails frontend as a regular CSS and TypeScript dependency. Import the stylesheet once from the frontend entry point.",
+  "source": "@site/docs/integrations/wails.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations/wails",
+  "permalink": "/twants/docs/integrations/wails",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/whiteant-ops/twants/tree/main/docs/docs/integrations/wails.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Wails"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Tauri",
+    "permalink": "/twants/docs/integrations/tauri"
+  },
+  "next": {
+    "title": "Vanilla",
+    "permalink": "/twants/docs/integrations/vanilla"
+  }
+}

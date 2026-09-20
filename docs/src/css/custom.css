@@ -1,0 +1,277 @@
+/* ============================================================
+   TWANTS × Docusaurus
+   Maps TWANTS tokens → Infima variables used by Docusaurus,
+   then restyles the default chrome to match TWANTS.
+   ============================================================ */
+
+:root {
+  /* --- Infima primary → TWANTS primary --- */
+  --ifm-color-primary: var(--twants-primary);
+  --ifm-color-primary-dark: var(--twants-primary-hover);
+  --ifm-color-primary-darker: var(--twants-primary-active);
+  --ifm-color-primary-darkest: color-mix(in srgb, var(--twants-primary) 70%, black);
+  --ifm-color-primary-light: color-mix(in srgb, var(--twants-primary) 85%, white);
+  --ifm-color-primary-lighter: color-mix(in srgb, var(--twants-primary) 70%, white);
+  --ifm-color-primary-lightest: color-mix(in srgb, var(--twants-primary) 50%, white);
+
+  /* --- Surfaces --- */
+  --ifm-background-color: var(--twants-background);
+  --ifm-background-surface-color: var(--twants-surface);
+  --ifm-card-background-color: var(--twants-surface);
+
+  /* --- Text --- */
+  --ifm-font-color-base: var(--twants-foreground);
+  --ifm-font-color-secondary: var(--twants-foreground-secondary);
+  --ifm-heading-color: var(--twants-foreground);
+  --ifm-color-content: var(--twants-foreground);
+  --ifm-color-content-secondary: var(--twants-foreground-secondary);
+  --ifm-color-emphasis-600: var(--twants-foreground-muted);
+  --ifm-color-emphasis-700: var(--twants-foreground-secondary);
+
+  /* --- Borders --- */
+  --ifm-color-emphasis-0: var(--twants-surface);
+  --ifm-color-emphasis-100: var(--twants-surface-secondary);
+  --ifm-color-emphasis-200: var(--twants-surface-tertiary);
+  --ifm-color-emphasis-300: var(--twants-border);
+  --ifm-color-emphasis-400: var(--twants-border-strong);
+  --ifm-color-emphasis-500: var(--twants-foreground-muted);
+
+  /* --- Typography --- */
+  --ifm-font-family-base: var(--twants-font-sans);
+  --ifm-font-family-monospace: var(--twants-font-mono);
+  --ifm-font-size-base: 15px;
+  --ifm-line-height-base: 1.65;
+  --ifm-heading-font-weight: var(--twants-font-semibold);
+  --ifm-heading-line-height: 1.25;
+
+  /* --- Radius --- */
+  --ifm-global-radius: var(--twants-radius-md);
+  --ifm-card-border-radius: var(--twants-radius-lg);
+  --ifm-button-border-radius: var(--twants-radius);
+  --ifm-code-border-radius: var(--twants-radius-sm);
+  --ifm-breadcrumb-border-radius: var(--twants-radius-sm);
+
+  /* --- Shadow --- */
+  --ifm-global-shadow-lw: var(--twants-shadow-xs);
+  --ifm-global-shadow-md: var(--twants-shadow);
+  --ifm-global-shadow-tl: var(--twants-shadow-lg);
+
+  /* --- Code --- */
+  --ifm-code-font-size: 88%;
+  --ifm-code-padding-horizontal: 0.35rem;
+  --ifm-code-padding-vertical: 0.15rem;
+  --ifm-code-background: var(--twants-surface-secondary);
+  --ifm-pre-background: var(--twants-surface-secondary);
+  --ifm-pre-border-radius: var(--twants-radius-md);
+  --docusaurus-highlighted-code-line-bg: color-mix(in srgb, var(--twants-primary) 12%, transparent);
+
+  /* --- Spacing & widths --- */
+  --ifm-spacing-horizontal: 1.25rem;
+  --ifm-navbar-height: 3.25rem;
+  --ifm-navbar-padding-horizontal: 1rem;
+  --ifm-toc-border-color: var(--twants-border);
+  --doc-sidebar-width: 16rem;
+}
+
+/* --- Dark mode --- */
+[data-theme="dark"] {
+  --ifm-background-color: var(--twants-background);
+  --ifm-background-surface-color: var(--twants-surface);
+  --ifm-color-primary: var(--twants-primary);
+  --ifm-color-primary-dark: var(--twants-primary-hover);
+  --ifm-color-primary-darker: var(--twants-primary-active);
+  --ifm-toc-border-color: var(--twants-border);
+  --docusaurus-highlighted-code-line-bg: color-mix(in srgb, var(--twants-primary) 22%, transparent);
+}
+
+/* --- Body & Mica background --- */
+html,
+body {
+  background: var(--twants-background);
+  color: var(--twants-foreground);
+}
+body {
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%,
+      color-mix(in srgb, var(--twants-primary) 10%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%,
+      color-mix(in srgb, var(--twants-info) 7%, transparent), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* --- Navbar — minimal because we swizzle, this is a fallback --- */
+.navbar {
+  background: color-mix(in srgb, var(--twants-surface) 80%, transparent) !important;
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--twants-border);
+  box-shadow: none !important;
+}
+.navbar__title { font-weight: var(--twants-font-semibold); letter-spacing: -0.01em; }
+.navbar__link {
+  font-size: var(--twants-text-base);
+  color: var(--twants-foreground-secondary);
+  border-radius: var(--twants-radius);
+  padding: 0.375rem 0.75rem;
+  transition: background 120ms var(--twants-ease-standard),
+              color 120ms var(--twants-ease-standard);
+}
+.navbar__link:hover {
+  background: var(--twants-surface-secondary);
+  color: var(--twants-foreground);
+}
+.navbar__link--active {
+  background: var(--twants-primary-subtle);
+  color: var(--twants-primary);
+}
+
+/* --- Sidebar --- */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--twants-border) !important;
+}
+.menu__link {
+  font-size: var(--twants-text-base);
+  color: var(--twants-foreground-secondary);
+  border-radius: var(--twants-radius);
+  padding: 0.375rem 0.625rem;
+}
+.menu__link:hover { background: var(--twants-surface-secondary); color: var(--twants-foreground); }
+.menu__link--active,
+.menu__link--active:hover {
+  background: var(--twants-primary-subtle);
+  color: var(--twants-primary);
+  font-weight: var(--twants-font-medium);
+}
+.menu__list-item-collapsible:hover { background: var(--twants-surface-secondary); border-radius: var(--twants-radius); }
+.menu__caret::before { background-size: 1.25rem 1.25rem; }
+
+/* --- Content / Markdown --- */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  color: var(--twants-foreground);
+  letter-spacing: -0.01em;
+}
+.markdown h1 { font-size: 2rem; }
+.markdown h2 {
+  font-size: 1.375rem;
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--twants-border);
+}
+.markdown h3 { font-size: 1.125rem; margin-top: 1.75rem; }
+.markdown a { color: var(--twants-primary); text-decoration: none; border-bottom: 1px solid transparent; }
+.markdown a:hover { border-bottom-color: color-mix(in srgb, var(--twants-primary) 60%, transparent); }
+
+.markdown code {
+  background: var(--twants-surface-secondary);
+  border: 1px solid var(--twants-border);
+  color: var(--twants-foreground);
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--twants-radius-sm);
+  font-size: 0.85em;
+}
+.markdown pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* --- Tables --- */
+.markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--twants-border);
+  border-radius: var(--twants-radius-md);
+  overflow: hidden;
+  font-size: var(--twants-text-base);
+}
+.markdown thead {
+  background: var(--twants-surface-secondary);
+}
+.markdown thead th {
+  text-align: left;
+  font-weight: var(--twants-font-semibold);
+  color: var(--twants-foreground);
+  border-bottom: 1px solid var(--twants-border) !important;
+  padding: 0.625rem 0.875rem;
+}
+.markdown tbody td {
+  border-bottom: 1px solid var(--twants-border) !important;
+  padding: 0.625rem 0.875rem;
+}
+.markdown tbody tr:last-child td { border-bottom: 0 !important; }
+.markdown tbody tr:hover { background: var(--twants-surface-secondary); }
+
+/* --- Blockquotes --- */
+.markdown blockquote {
+  border-left: 3px solid var(--twants-primary);
+  background: var(--twants-primary-subtle);
+  padding: 0.75rem 1rem;
+  border-radius: var(--twants-radius-md);
+  color: var(--twants-foreground-secondary);
+}
+
+/* --- TOC --- */
+.table-of-contents {
+  font-size: var(--twants-text-sm);
+  border-left: 1px solid var(--twants-border);
+}
+.table-of-contents__link {
+  color: var(--twants-foreground-secondary);
+  border-radius: var(--twants-radius-sm);
+  padding: 0.2rem 0.5rem;
+  display: block;
+}
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--twants-primary);
+  background: var(--twants-primary-subtle);
+}
+
+/* --- Footer (classic) --- */
+.footer {
+  background: var(--twants-surface);
+  border-top: 1px solid var(--twants-border);
+  color: var(--twants-foreground-secondary);
+  padding: 2.5rem 1rem 1.5rem;
+}
+.footer__title { color: var(--twants-foreground); font-size: var(--twants-text-sm); text-transform: uppercase; letter-spacing: 0.06em; }
+.footer__link-item { color: var(--twants-foreground-secondary); }
+.footer__link-item:hover { color: var(--twants-primary); }
+.footer__copyright { color: var(--twants-foreground-muted); font-size: var(--twants-text-xs); }
+
+/* --- Pagination --- */
+.pagination-nav__link {
+  border: 1px solid var(--twants-border);
+  border-radius: var(--twants-radius-md);
+  transition: box-shadow 120ms var(--twants-ease-standard),
+              border-color 120ms var(--twants-ease-standard);
+}
+.pagination-nav__link:hover {
+  border-color: var(--twants-primary);
+  box-shadow: var(--twants-shadow);
+}
+.pagination-nav__sublabel { color: var(--twants-foreground-muted); }
+.pagination-nav__label { color: var(--twants-foreground); }
+
+/* --- Scrollbars --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--twants-border-strong) transparent;
+}
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb {
+  background: var(--twants-border-strong);
+  border-radius: 9999px;
+  border: 2px solid var(--twants-background);
+}
+
+/* --- Focus rings --- */
+:focus-visible {
+  outline: 2px solid var(--twants-focus-ring);
+  outline-offset: 2px;
+}

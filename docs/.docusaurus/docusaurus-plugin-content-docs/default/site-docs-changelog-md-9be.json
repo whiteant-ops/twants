@@ -1,0 +1,26 @@
+{
+  "id": "changelog",
+  "title": "Changelog",
+  "description": "Unreleased",
+  "source": "@site/docs/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/twants/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/whiteant-ops/twants/tree/main/docs/docs/changelog.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Changelog"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Vanilla",
+    "permalink": "/twants/docs/integrations/vanilla"
+  },
+  "next": {
+    "title": "Contributing",
+    "permalink": "/twants/docs/contributing"
+  }
+}

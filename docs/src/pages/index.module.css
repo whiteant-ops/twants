@@ -1,0 +1,46 @@
+.main {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.5rem;
+}
+
+.hero {
+  width: min(100%, 60rem);
+  padding: 4rem 2rem;
+  border: 1px solid var(--twants-border);
+  border-radius: var(--twants-radius-xl);
+  background: linear-gradient(135deg, var(--twants-surface), var(--twants-surface-secondary));
+  text-align: center;
+  box-shadow: var(--twants-shadow-lg);
+}
+
+.eyebrow {
+  color: var(--twants-primary);
+  font-size: var(--twants-text-sm);
+  font-weight: var(--twants-font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero h1 {
+  margin: 0.75rem 0;
+  color: var(--twants-foreground);
+  font-size: clamp(2.75rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.lede {
+  max-width: 38rem;
+  margin: 0 auto;
+  color: var(--twants-foreground-secondary);
+  font-size: var(--twants-text-lg);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}

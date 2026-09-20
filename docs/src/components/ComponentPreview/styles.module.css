@@ -1,0 +1,33 @@
+.wrap {
+  margin: 1.25rem 0;
+  overflow: hidden;
+  border: 1px solid var(--twants-border);
+  border-radius: var(--twants-radius-lg);
+  background: var(--twants-surface);
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  border-bottom: 1px solid var(--twants-border);
+  background: var(--twants-surface-secondary);
+}
+
+.tab {
+  padding: 0.3125rem 0.75rem;
+  border: 0;
+  border-radius: var(--twants-radius-sm);
+  background: transparent;
+  color: var(--twants-foreground-secondary);
+  cursor: pointer;
+}
+
+.tabActive {
+  background: var(--twants-surface);
+  color: var(--twants-primary);
+}
+
+.body { min-height: 8rem; }
+.preview { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: center; padding: 1.5rem; }
+.code { max-height: 24rem; margin: 0; padding: 1rem; overflow: auto; background: var(--twants-surface-secondary); }

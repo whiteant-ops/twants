@@ -1,0 +1,26 @@
+{
+  "id": "integrations/vanilla",
+  "title": "Vanilla",
+  "description": "Interactive modules can be imported individually to keep the bundle small.",
+  "source": "@site/docs/integrations/vanilla.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations/vanilla",
+  "permalink": "/twants/docs/integrations/vanilla",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/whiteant-ops/twants/tree/main/docs/docs/integrations/vanilla.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Vanilla"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Wails",
+    "permalink": "/twants/docs/integrations/wails"
+  },
+  "next": {
+    "title": "Changelog",
+    "permalink": "/twants/docs/changelog"
+  }
+}

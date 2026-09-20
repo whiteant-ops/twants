@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./theme.css";
+@import "./components.css";
+
+/* Tailwind v4 CSS-first theme bridge — exposes TWANTS tokens
+   as Tailwind utilities like bg-twants-surface, text-twants-foreground. */
+@theme {
+  --color-twants-background:   var(--twants-background);
+  --color-twants-surface:      var(--twants-surface);
+  --color-twants-surface-2:    var(--twants-surface-secondary);
+  --color-twants-foreground:   var(--twants-foreground);
+  --color-twants-muted:        var(--twants-foreground-muted);
+  --color-twants-border:       var(--twants-border);
+  --color-twants-primary:      var(--twants-primary);
+  --color-twants-success:      var(--twants-success);
+  --color-twants-warning:      var(--twants-warning);
+  --color-twants-danger:       var(--twants-danger);
+  --color-twants-info:         var(--twants-info);
+
+  --radius-twants:      var(--twants-radius);
+  --radius-twants-sm:   var(--twants-radius-sm);
+  --radius-twants-md:   var(--twants-radius-md);
+  --radius-twants-lg:   var(--twants-radius-lg);
+  --radius-twants-xl:   var(--twants-radius-xl);
+  --radius-twants-full: var(--twants-radius-full);
+
+  --font-sans: var(--twants-font-sans);
+  --font-mono: var(--twants-font-mono);
+}

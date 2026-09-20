@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TWANTS — Documentation</title>
+</head>
+<body class="twants-mica" style="min-height:100vh">
+  <div class="twants-app-frame">
+    <div class="twants-title-bar">
+      <span style="display:inline-flex;gap:.5rem;align-items:center">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h6v12H4zM14 6h6v12h-6z"/></svg>
+        <span class="twants-title-bar-title">TWANTS Documentation</span>
+      </span>
+      <div class="twants-title-bar-controls">
+        <button class="twants-title-bar-btn" aria-label="Minimize"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8" stroke="currentColor"/></svg></button>
+        <button class="twants-title-bar-btn" aria-label="Maximize"><svg width="12" height="12" viewBox="0 0 12 12"><rect x="2.5" y="2.5" width="7" height="7" fill="none" stroke="currentColor"/></svg></button>
+        <button class="twants-title-bar-btn twants-title-bar-btn-close" aria-label="Close"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor"/></svg></button>
+      </div>
+    </div>
+
+    <div class="twants-dashboard" style="height:calc(100vh - 2.25rem);grid-template-rows:1fr;">
+      <aside class="twants-sidebar twants-dashboard-sidebar">
+        <div class="twants-sidebar-section">
+          <div class="twants-sidebar-section-title">Getting Started</div>
+          <a class="twants-sidebar-item" aria-current="page">Introduction</a>
+          <a class="twants-sidebar-item">Installation</a>
+          <a class="twants-sidebar-item">Quick Start</a>
+        </div>
+        <div class="twants-sidebar-section">
+          <div class="twants-sidebar-section-title">Design</div>
+          <a class="twants-sidebar-item">Design Tokens</a>
+          <a class="twants-sidebar-item">Themes</a>
+          <a class="twants-sidebar-item">Accessibility</a>
+        </div>
+        <div class="twants-sidebar-section">
+          <div class="twants-sidebar-section-title">Components</div>
+          <a class="twants-sidebar-item">Button</a>
+          <a class="twants-sidebar-item">Input</a>
+          <a class="twants-sidebar-item">Card</a>
+          <a class="twants-sidebar-item">Modal</a>
+          <a class="twants-sidebar-item">Sidebar</a>
+        </div>
+        <div class="twants-sidebar-section">
+          <div class="twants-sidebar-section-title">Integrations</div>
+          <a class="twants-sidebar-item">Laravel</a>
+          <a class="twants-sidebar-item">Django</a>
+          <a class="twants-sidebar-item">Tauri</a>
+          <a class="twants-sidebar-item">Wails</a>
+          <a class="twants-sidebar-item">Vanilla</a>
+        </div>
+      </aside>
+
+      <main class="twants-dashboard-main twants-scroll">
+        <div class="twants-container">
+          <h1 style="font-size:var(--twants-text-3xl);font-weight:var(--twants-font-semibold);letter-spacing:-0.02em">Introduction</h1>
+          <p style="margin-top:.75rem;color:var(--twants-foreground-secondary);max-width:60ch">
+            TWANTS is a framework-agnostic UI system built with Vite and Tailwind CSS v4,
+            inspired by WinUI / Fluent Design. It ships ~100 customizable components using
+            CSS variables, semantic tokens, and accessible HTML.
+          </p>
+
+          <h2 style="margin-top:2rem;font-size:var(--twants-text-xl);font-weight:var(--twants-font-semibold)">Installation</h2>
+          <pre class="twants-tag" style="display:block;padding:1rem;margin-top:.75rem;font-size:var(--twants-text-sm)">npm install twants</pre>
+
+          <h2 style="margin-top:2rem;font-size:var(--twants-text-xl);font-weight:var(--twants-font-semibold)">Quick start</h2>
+          <div class="twants-card" style="margin-top:.75rem">
+            <div class="twants-card-body">
+              <pre style="font-family:var(--twants-font-mono);font-size:var(--twants-text-sm);color:var(--twants-foreground-secondary);white-space:pre-wrap">import "twants/styles";
+import { ThemeSwitcher } from "twants";
+
+ThemeSwitcher.init();</pre>
+            </div>
+          </div>
+
+          <h2 style="margin-top:2rem;font-size:var(--twants-text-xl);font-weight:var(--twants-font-semibold)">Next</h2>
+          <p style="color:var(--twants-foreground-secondary)">Explore individual components in the sidebar.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="./docs.ts"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+    "name": "whiteant-ops/twants",
+    "version": "0.1.0",
+    "description": "A Modern Tailwind UI System for Everywhere. Framework-agnostic components inspired by WinUI / Fluent Design.",
+    "type": "module",
+    "license": "MIT",
+    "keywords": [
+        "tailwind",
+        "tailwindcss",
+        "winui",
+        "fluent-design",
+        "design-system",
+        "ui-kit",
+        "components",
+        "vite",
+        "laravel",
+        "django",
+        "tauri",
+        "wails"
+    ],
+    "author": "TWANTS Contributors",
+    "homepage": "https://github.com/whiteant-ops/twants",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/whiteant-ops/twants.git"
+    },
+    "bugs": "https://github.com/whiteant-ops/twants/issues",
+    "files": [
+        "dist",
+        "src",
+        "README.md",
+        "LICENSE"
+    ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./styles": "./src/styles/index.css",
+        "./tokens": "./src/styles/tokens.css",
+        "./theme": "./src/styles/theme.css",
+        "./components": "./src/styles/components.css",
+        "./icons": {
+            "types": "./dist/icons/index.d.ts",
+            "import": "./dist/icons/index.js"
+        }
+    },
+    "bin": {
+        "twants": "./cli/twants.mjs"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "demo": "vite --open /demo/",
+        "docs": "vite --open /docs/",
+        "typecheck": "tsc --noEmit"
+    },
+    "peerDependencies": {
+        "tailwindcss": "^4.3.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.3",
+        "@types/node": "^26.6.2",
+        "typescript": "^7.0.2",
+        "vite": "^8.3.0"
+    }
+}

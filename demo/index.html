@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TWANTS — Playground</title>
+</head>
+<body class="twants-mica" style="min-height:100vh;color:var(--twants-foreground)">
+  <header class="twants-navbar">
+    <div class="twants-navbar-brand">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h6v12H4zM14 6h6v12h-6z"/>
+      </svg>
+      TWANTS
+    </div>
+    <nav class="twants-navbar-nav">
+      <a class="twants-navbar-link" aria-current="page" href="#">Overview</a>
+      <a class="twants-navbar-link" href="#">Components</a>
+      <a class="twants-navbar-link" href="#">Docs</a>
+    </nav>
+    <button id="theme-btn" class="twants-icon-button" title="Toggle theme"></button>
+  </header>
+
+  <main class="twants-container" style="padding-block: 2rem;">
+    <h1 style="font-size:var(--twants-text-3xl);font-weight:var(--twants-font-semibold);letter-spacing:-0.02em;">
+      A Modern Tailwind UI System for Everywhere.
+    </h1>
+    <p style="color:var(--twants-foreground-secondary);margin-top:.5rem;">
+      Fluent-inspired, framework-agnostic components built on Tailwind CSS v4.
+    </p>
+
+    <section class="twants-stack" style="margin-top:2rem;gap:1.5rem">
+
+      <div class="twants-card">
+        <div class="twants-card-header">
+          <div class="twants-card-title">Buttons</div>
+          <div class="twants-badge twants-badge-primary">Foundation</div>
+        </div>
+        <div class="twants-card-body twants-stack twants-stack-h" style="flex-wrap:wrap">
+          <button class="twants-button twants-button-primary">Primary</button>
+          <button class="twants-button">Default</button>
+          <button class="twants-button twants-button-outline">Outline</button>
+          <button class="twants-button twants-button-subtle">Subtle</button>
+          <button class="twants-button twants-button-danger">Danger</button>
+          <button class="twants-button twants-button-success">Success</button>
+          <button class="twants-button twants-button-primary" disabled>Disabled</button>
+          <button class="twants-button twants-button-primary twants-button-loading">Loading</button>
+        </div>
+      </div>
+
+      <div class="twants-card">
+        <div class="twants-card-header">
+          <div class="twants-card-title">Form controls</div>
+        </div>
+        <div class="twants-card-body twants-grid" style="--twants-grid-cols:2;">
+          <label class="twants-field">
+            <span class="twants-field-label">Email</span>
+            <input class="twants-input" type="email" placeholder="you@example.com" />
+            <span class="twants-field-hint">We'll never share your email.</span>
+          </label>
+          <div class="twants-field">
+            <span class="twants-field-label">Search</span>
+            <label class="twants-search">
+              <span class="twants-search-icon" id="search-icon"></span>
+              <input class="twants-input" placeholder="Search..." />
+            </label>
+          </div>
+          <label class="twants-field">
+            <span class="twants-field-label">Select</span>
+            <select class="twants-select">
+              <option>Option A</option><option>Option B</option>
+            </select>
+          </label>
+          <div class="twants-field">
+            <span class="twants-field-label">Options</span>
+            <div class="twants-stack twants-stack-h" style="gap:1rem">
+              <label class="twants-checkbox-label"><input class="twants-checkbox" type="checkbox" checked /> Checkbox</label>
+              <label class="twants-radio-label"><input class="twants-radio" type="radio" name="r" checked /> Radio</label>
+              <label class="twants-radio-label"><input class="twants-switch" type="checkbox" checked /> Switch</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="twants-grid" style="--twants-grid-cols:3;">
+        <div class="twants-stat-card">
+          <div class="twants-stat-label">Active users</div>
+          <div class="twants-stat-value">12,482</div>
+          <div class="twants-stat-trend" data-trend="up">▲ 4.6% this week</div>
+        </div>
+        <div class="twants-stat-card">
+          <div class="twants-stat-label">Deploys today</div>
+          <div class="twants-stat-value">18</div>
+          <div class="twants-stat-trend" data-trend="down">▼ 2 since yesterday</div>
+        </div>
+        <div class="twants-stat-card">
+          <div class="twants-stat-label">Uptime</div>
+          <div class="twants-stat-value">99.98%</div>
+          <div class="twants-stat-trend" data-trend="up">▲ 0.02%</div>
+        </div>
+      </div>
+
+      <div class="twants-card">
+        <div class="twants-card-header"><div class="twants-card-title">Tabs & Menu</div></div>
+        <div class="twants-card-body">
+          <div class="twants-tabs" role="tablist" id="tabs">
+            <button class="twants-tab" role="tab" aria-selected="true">Overview</button>
+            <button class="twants-tab" role="tab" aria-selected="false">Activity</button>
+            <button class="twants-tab" role="tab" aria-selected="false">Settings</button>
+          </div>
+          <div style="padding-top:.75rem">
+            <div role="tabpanel">Overview content…</div>
+            <div role="tabpanel" hidden>Activity content…</div>
+            <div role="tabpanel" hidden>Settings content…</div>
+          </div>
+
+          <div style="margin-top:1rem;display:inline-block">
+            <button id="menu-trigger" class="twants-button">Actions ▾</button>
+            <ul id="menu" class="twants-menu" style="position:absolute;margin-top:.25rem">
+              <li class="twants-menu-label">File</li>
+              <li><button class="twants-menu-item">New<span class="twants-menu-item-shortcut">⌘N</span></button></li>
+              <li><button class="twants-menu-item">Open<span class="twants-menu-item-shortcut">⌘O</span></button></li>
+              <li class="twants-menu-sep"></li>
+              <li><button class="twants-menu-item" aria-disabled="true">Delete</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="twants-card">
+        <div class="twants-card-header"><div class="twants-card-title">Feedback</div></div>
+        <div class="twants-card-body twants-stack">
+          <div class="twants-alert twants-alert-info">
+            <span class="twants-alert-icon" id="i-info"></span>
+            <div><div class="twants-alert-title">Heads up</div>New updates are available.</div>
+          </div>
+          <div class="twants-alert twants-alert-success">
+            <span class="twants-alert-icon" id="i-ok"></span>
+            <div>Deployment completed successfully.</div>
+          </div>
+          <div class="twants-alert twants-alert-danger">
+            <span class="twants-alert-icon" id="i-err"></span>
+            <div>Backup failed. Please retry.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="twants-card">
+        <div class="twants-card-header"><div class="twants-card-title">Actions demo</div></div>
+        <div class="twants-card-body twants-stack twants-stack-h" style="flex-wrap:wrap">
+          <button id="open-modal" class="twants-button twants-button-primary">Open modal</button>
+          <button id="open-drawer" class="twants-button">Open drawer</button>
+          <button id="show-toast" class="twants-button twants-button-success">Show toast</button>
+          <button id="open-cmd" class="twants-button twants-button-outline">Command palette ⌘K</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="drawer-host"></div>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* ============================================================
+   TWANTS — Themes
+   Light, dark, high-contrast, and custom accent hooks.
+   ============================================================ */
+
+/* ---------- Dark theme ---------- */
+[data-theme="dark"],
+.dark {
+  --twants-background:          var(--twants-gray-950);
+  --twants-surface:             #0b1220;
+  --twants-surface-secondary:   #111a2e;
+  --twants-surface-tertiary:    #1b2744;
+  --twants-surface-elevated:    #131c33;
+  --twants-foreground:          var(--twants-gray-50);
+  --twants-foreground-secondary:var(--twants-gray-300);
+  --twants-foreground-muted:    var(--twants-gray-400);
+  --twants-border:              #1e293b;
+  --twants-border-strong:       #334155;
+  --twants-overlay:             rgb(2 6 23 / 0.7);
+
+  --twants-primary:             var(--twants-accent-500);
+  --twants-primary-hover:       var(--twants-accent-400);
+  --twants-primary-active:      var(--twants-accent-300);
+  --twants-primary-foreground:  #0b1220;
+  --twants-primary-subtle:      rgb(59 130 246 / 0.14);
+
+  --twants-success-subtle:      rgb(34 197 94 / 0.14);
+  --twants-warning-subtle:      rgb(245 158 11 / 0.14);
+  --twants-danger-subtle:       rgb(239 68 68 / 0.14);
+  --twants-info-subtle:         rgb(6 182 212 / 0.14);
+
+  --twants-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --twants-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+  --twants-shadow:    0 4px 14px -2px rgb(0 0 0 / 0.55);
+  --twants-shadow-md: 0 8px 22px -4px rgb(0 0 0 / 0.6);
+  --twants-shadow-lg: 0 16px 36px -8px rgb(0 0 0 / 0.65);
+  --twants-shadow-xl: 0 24px 52px -12px rgb(0 0 0 / 0.7);
+}
+
+/* Follow OS preference when no explicit theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+
+/* ---------- High-contrast ---------- */
+[data-contrast="high"] {
+  --twants-border: var(--twants-foreground);
+  --twants-border-strong: var(--twants-foreground);
+  --twants-shadow: none;
+  --twants-shadow-md: none;
+  --twants-shadow-lg: none;
+}
+
+/* ---------- Accent hooks ---------- */
+/* Developers can override these CSS variables on any ancestor:
+     <html style="--twants-primary: #7c3aed; --twants-focus-ring: #7c3aed;"> */
+
+/* ---------- Mica-inspired app background ---------- */
+.twants-mica {
+  background:
+    radial-gradient(1200px 600px at 10% -10%,
+      color-mix(in srgb, var(--twants-primary) 18%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%,
+      color-mix(in srgb, var(--twants-info) 12%, transparent), transparent 55%),
+    var(--twants-background);
+}
+
+/* ---------- Acrylic-inspired translucent surface ---------- */
+.twants-acrylic {
+  background: color-mix(in srgb, var(--twants-surface) 78%, transparent);
+  backdrop-filter: saturate(140%) blur(18px);
+  -webkit-backdrop-filter: saturate(140%) blur(18px);
+  border: 1px solid color-mix(in srgb, var(--twants-border) 90%, transparent);
+}
+
+/* ---------- Reveal-style hover highlight ---------- */
+.twants-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.twants-reveal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    260px 160px at var(--twants-mx, 50%) var(--twants-my, 50%),
+    color-mix(in srgb, var(--twants-foreground) 8%, transparent),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--twants-duration) var(--twants-ease-standard);
+  pointer-events: none;
+}
+.twants-reveal:hover::before { opacity: 1; }

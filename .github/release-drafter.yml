@@ -1,0 +1,27 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+categories:
+  - title: "Features"
+    labels: [feat, feature, enhancement]
+  - title: "Fixes"
+    labels: [fix, bug]
+  - title: "Components"
+    labels: [component]
+  - title: "Documentation"
+    labels: [docs]
+  - title: "Maintenance"
+    labels: [chore, deps, ci]
+  - title: "Breaking changes"
+    labels: [breaking]
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
+version-resolver:
+  major: { labels: [breaking] }
+  minor: { labels: [feat, feature] }
+  patch: { labels: [fix, chore, docs, component] }
+  default: patch
+template: |
+  ## What's changed
+
+  $CHANGES
+
+  **Full changelog**: https://github.com/whiteant-ops/twants/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION

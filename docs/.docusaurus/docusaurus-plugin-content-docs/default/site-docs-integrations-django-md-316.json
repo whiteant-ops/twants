@@ -1,0 +1,26 @@
+{
+  "id": "integrations/django",
+  "title": "Django",
+  "description": "Build or copy the TWANTS stylesheet into your static assets, load it in the base template, and use the semantic classes in Django templates.",
+  "source": "@site/docs/integrations/django.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations/django",
+  "permalink": "/twants/docs/integrations/django",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/whiteant-ops/twants/tree/main/docs/docs/integrations/django.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Django"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Laravel",
+    "permalink": "/twants/docs/integrations/laravel"
+  },
+  "next": {
+    "title": "Tauri",
+    "permalink": "/twants/docs/integrations/tauri"
+  }
+}

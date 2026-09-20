@@ -1,0 +1,103 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/twants/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/twants/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "changelog",
+              "path": "/twants/docs/changelog",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/button",
+              "path": "/twants/docs/components/button",
+              "sidebar": "docs"
+            },
+            {
+              "id": "contributing",
+              "path": "/twants/docs/contributing",
+              "sidebar": "docs"
+            },
+            {
+              "id": "design/accessibility",
+              "path": "/twants/docs/design/accessibility",
+              "sidebar": "docs"
+            },
+            {
+              "id": "design/themes",
+              "path": "/twants/docs/design/themes",
+              "sidebar": "docs"
+            },
+            {
+              "id": "design/tokens",
+              "path": "/twants/docs/design/tokens",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/installation",
+              "path": "/twants/docs/getting-started/installation",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/quick-start",
+              "path": "/twants/docs/getting-started/quick-start",
+              "sidebar": "docs"
+            },
+            {
+              "id": "integrations/django",
+              "path": "/twants/docs/integrations/django",
+              "sidebar": "docs"
+            },
+            {
+              "id": "integrations/laravel",
+              "path": "/twants/docs/integrations/laravel",
+              "sidebar": "docs"
+            },
+            {
+              "id": "integrations/tauri",
+              "path": "/twants/docs/integrations/tauri",
+              "sidebar": "docs"
+            },
+            {
+              "id": "integrations/vanilla",
+              "path": "/twants/docs/integrations/vanilla",
+              "sidebar": "docs"
+            },
+            {
+              "id": "integrations/wails",
+              "path": "/twants/docs/integrations/wails",
+              "sidebar": "docs"
+            },
+            {
+              "id": "intro",
+              "path": "/twants/docs/intro",
+              "sidebar": "docs"
+            },
+            {
+              "id": "license",
+              "path": "/twants/docs/license",
+              "sidebar": "docs"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docs": {
+              "link": {
+                "path": "/twants/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

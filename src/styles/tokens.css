@@ -1,0 +1,179 @@
+/* ============================================================
+   TWANTS — Design Tokens
+   All colors, spacing, radii, shadows, and motion values
+   are expressed as CSS custom properties so any component
+   can be themed without touching its source.
+   ============================================================ */
+
+:root {
+  /* ---------- Neutral scale ---------- */
+  --twants-gray-0:   #ffffff;
+  --twants-gray-50:  #f8fafc;
+  --twants-gray-100: #f1f5f9;
+  --twants-gray-200: #e2e8f0;
+  --twants-gray-300: #cbd5e1;
+  --twants-gray-400: #94a3b8;
+  --twants-gray-500: #64748b;
+  --twants-gray-600: #475569;
+  --twants-gray-700: #334155;
+  --twants-gray-800: #1e293b;
+  --twants-gray-900: #0f172a;
+  --twants-gray-950: #020617;
+
+  /* ---------- Accent (default: Fluent blue) ---------- */
+  --twants-accent-50:  #eff6ff;
+  --twants-accent-100: #dbeafe;
+  --twants-accent-200: #bfdbfe;
+  --twants-accent-300: #93c5fd;
+  --twants-accent-400: #60a5fa;
+  --twants-accent-500: #3b82f6;
+  --twants-accent-600: #2563eb;
+  --twants-accent-700: #1d4ed8;
+  --twants-accent-800: #1e40af;
+  --twants-accent-900: #1e3a8a;
+
+  /* ---------- Status scales ---------- */
+  --twants-success-50:  #f0fdf4;
+  --twants-success-500: #22c55e;
+  --twants-success-600: #16a34a;
+  --twants-success-700: #15803d;
+
+  --twants-warning-50:  #fffbeb;
+  --twants-warning-500: #f59e0b;
+  --twants-warning-600: #d97706;
+  --twants-warning-700: #b45309;
+
+  --twants-danger-50:   #fef2f2;
+  --twants-danger-500:  #ef4444;
+  --twants-danger-600:  #dc2626;
+  --twants-danger-700:  #b91c1c;
+
+  --twants-info-50:     #ecfeff;
+  --twants-info-500:    #06b6d4;
+  --twants-info-600:    #0284c7;
+  --twants-info-700:    #0369a1;
+
+  /* ---------- Semantic (light theme defaults) ---------- */
+  --twants-background:          var(--twants-gray-50);
+  --twants-surface:             var(--twants-gray-0);
+  --twants-surface-secondary:   var(--twants-gray-100);
+  --twants-surface-tertiary:    var(--twants-gray-200);
+  --twants-surface-elevated:    var(--twants-gray-0);
+  --twants-foreground:          var(--twants-gray-900);
+  --twants-foreground-secondary:var(--twants-gray-600);
+  --twants-foreground-muted:    var(--twants-gray-500);
+  --twants-border:              var(--twants-gray-200);
+  --twants-border-strong:       var(--twants-gray-300);
+  --twants-overlay:             rgb(15 23 42 / 0.45);
+
+  --twants-primary:             var(--twants-accent-600);
+  --twants-primary-hover:       var(--twants-accent-700);
+  --twants-primary-active:      var(--twants-accent-800);
+  --twants-primary-foreground:  #ffffff;
+  --twants-primary-subtle:      var(--twants-accent-50);
+
+  --twants-success:             var(--twants-success-600);
+  --twants-success-foreground:  #ffffff;
+  --twants-success-subtle:      var(--twants-success-50);
+
+  --twants-warning:             var(--twants-warning-600);
+  --twants-warning-foreground:  #ffffff;
+  --twants-warning-subtle:      var(--twants-warning-50);
+
+  --twants-danger:              var(--twants-danger-600);
+  --twants-danger-foreground:   #ffffff;
+  --twants-danger-subtle:       var(--twants-danger-50);
+
+  --twants-info:                var(--twants-info-600);
+  --twants-info-foreground:     #ffffff;
+  --twants-info-subtle:         var(--twants-info-50);
+
+  --twants-focus-ring:          var(--twants-accent-500);
+
+  /* ---------- Radius ---------- */
+  --twants-radius-xs:  3px;
+  --twants-radius-sm:  4px;
+  --twants-radius:     6px;
+  --twants-radius-md:  8px;
+  --twants-radius-lg:  10px;
+  --twants-radius-xl:  14px;
+  --twants-radius-2xl: 20px;
+  --twants-radius-full: 9999px;
+
+  /* ---------- Shadows (Fluent-inspired, soft) ---------- */
+  --twants-shadow-xs: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+  --twants-shadow-sm: 0 1px 3px 0 rgb(15 23 42 / 0.06),
+                      0 1px 2px -1px rgb(15 23 42 / 0.04);
+  --twants-shadow:    0 4px 12px -2px rgb(15 23 42 / 0.08),
+                      0 2px 4px -2px rgb(15 23 42 / 0.04);
+  --twants-shadow-md: 0 8px 20px -4px rgb(15 23 42 / 0.10),
+                      0 4px 8px -4px rgb(15 23 42 / 0.05);
+  --twants-shadow-lg: 0 16px 32px -8px rgb(15 23 42 / 0.14),
+                      0 8px 16px -8px rgb(15 23 42 / 0.06);
+  --twants-shadow-xl: 0 24px 48px -12px rgb(15 23 42 / 0.20),
+                      0 12px 24px -12px rgb(15 23 42 / 0.08);
+
+  /* ---------- Spacing (mirrors Tailwind) ---------- */
+  --twants-space-0:  0;
+  --twants-space-1:  0.25rem;
+  --twants-space-2:  0.5rem;
+  --twants-space-3:  0.75rem;
+  --twants-space-4:  1rem;
+  --twants-space-5:  1.25rem;
+  --twants-space-6:  1.5rem;
+  --twants-space-8:  2rem;
+  --twants-space-10: 2.5rem;
+  --twants-space-12: 3rem;
+  --twants-space-16: 4rem;
+
+  /* ---------- Typography ---------- */
+  --twants-font-sans: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system,
+                      "Inter", "Helvetica Neue", Arial, sans-serif;
+  --twants-font-mono: "Cascadia Code", "JetBrains Mono", ui-monospace,
+                      SFMono-Regular, Menlo, Consolas, monospace;
+
+  --twants-text-xs:   0.75rem;
+  --twants-text-sm:   0.8125rem;
+  --twants-text-base: 0.875rem;
+  --twants-text-md:   0.9375rem;
+  --twants-text-lg:   1.0625rem;
+  --twants-text-xl:   1.25rem;
+  --twants-text-2xl:  1.5rem;
+  --twants-text-3xl:  1.875rem;
+  --twants-text-4xl:  2.25rem;
+
+  --twants-leading-tight: 1.2;
+  --twants-leading-snug:  1.35;
+  --twants-leading-normal:1.5;
+  --twants-leading-relaxed:1.65;
+
+  --twants-font-regular:  400;
+  --twants-font-medium:   500;
+  --twants-font-semibold: 600;
+  --twants-font-bold:     700;
+
+  /* ---------- Motion ---------- */
+  --twants-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --twants-ease-decel:    cubic-bezier(0.05, 0.7, 0.1, 1);
+  --twants-ease-accel:    cubic-bezier(0.3, 0, 1, 1);
+  --twants-duration-fast: 100ms;
+  --twants-duration:      160ms;
+  --twants-duration-slow: 240ms;
+
+  /* ---------- Z-index ---------- */
+  --twants-z-dropdown: 1000;
+  --twants-z-sticky:   1100;
+  --twants-z-overlay:  1200;
+  --twants-z-modal:    1300;
+  --twants-z-popover:  1400;
+  --twants-z-toast:    1500;
+  --twants-z-tooltip:  1600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --twants-duration-fast: 0ms;
+    --twants-duration:      0ms;
+    --twants-duration-slow: 0ms;
+  }
+}

@@ -1,0 +1,18 @@
+.toggle {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--twants-radius);
+  background: transparent;
+  border: 0;
+  color: var(--twants-foreground-secondary);
+  cursor: pointer;
+  transition: background 120ms var(--twants-ease-standard),
+              color 120ms var(--twants-ease-standard);
+}
+.toggle:hover {
+  background: var(--twants-surface-secondary);
+  color: var(--twants-foreground);
+}

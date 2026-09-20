@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/whiteant-ops/twants/discussions
+    about: Ask questions and get help from the community
+  - name: Documentation
+    url: https://whiteant-ops.github.io/twants/
+    about: Read the official docs
+  - name: Security issue
+    url: https://github.com/whiteant-ops/twants/security/advisories/new
+    about: Privately report a vulnerability
