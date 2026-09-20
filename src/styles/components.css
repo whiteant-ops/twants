@@ -2735,6 +2735,146 @@
     border-radius: var(--twants-radius-md);
     box-shadow: var(--twants-shadow-lg);
   }
+
+  /* Marker (status indicator) */
+  .twants-marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-medium);
+    white-space: nowrap;
+  }
+  .twants-marker-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .twants-marker-default .twants-marker-dot { background: var(--twants-foreground-muted); }
+  .twants-marker-primary .twants-marker-dot { background: var(--twants-primary); }
+  .twants-marker-success .twants-marker-dot { background: var(--twants-success); }
+  .twants-marker-warning .twants-marker-dot { background: var(--twants-warning); }
+  .twants-marker-danger  .twants-marker-dot { background: var(--twants-danger); }
+  .twants-marker-info    .twants-marker-dot { background: var(--twants-info); }
+  .twants-marker-pulse .twants-marker-dot {
+    animation: twants-pulse 1.5s ease-in-out infinite;
+  }
+  .twants-marker-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* Message Scroller */
+  .twants-scroller {
+    position: relative;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  .twants-scroller-fade-top::before,
+  .twants-scroller-fade-bottom::after {
+    content: "";
+    position: sticky;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .twants-scroller-fade-top::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--twants-surface), transparent);
+  }
+  .twants-scroller-fade-bottom::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--twants-surface), transparent);
+  }
+  .twants-scroller-new {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.375rem 0.875rem;
+    background: var(--twants-primary);
+    color: white;
+    border: 0;
+    border-radius: var(--twants-radius-full);
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-medium);
+    cursor: pointer;
+    box-shadow: var(--twants-shadow-md);
+    z-index: 2;
+    transition: opacity var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-scroller-new:hover { opacity: 0.9; }
+
+  /* Questionnaire */
+  .twants-questionnaire {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .twants-question {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    transition: border-color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-question:hover { border-color: var(--twants-border-strong); }
+  .twants-question-required::after {
+    content: " *";
+    color: var(--twants-danger);
+  }
+  .twants-question-label {
+    font-size: var(--twants-text-sm);
+    font-weight: var(--twants-font-medium);
+    color: var(--twants-foreground);
+  }
+  .twants-question-description {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-question-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .twants-question-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius);
+    cursor: pointer;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard),
+                border-color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-question-option:hover { background: var(--twants-surface-secondary); }
+  .twants-question-option[data-selected="true"] {
+    background: var(--twants-primary-subtle);
+    border-color: var(--twants-primary);
+    color: var(--twants-primary);
+  }
+  .twants-question-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-secondary);
+  }
+  .twants-question-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0 0;
+    border-top: 1px solid var(--twants-border);
+  }
 }
 
 /* =========================================================

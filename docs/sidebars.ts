@@ -74,6 +74,7 @@ const sidebars: SidebarsConfig = {
         "components/tree",
         "components/accordion",
         "components/collapsible",
+        "components/marker",
       ],
     },
     {
@@ -85,6 +86,8 @@ const sidebars: SidebarsConfig = {
         "components/dialog",
         "components/alert-dialog",
         "components/progress",
+        "components/message",
+        "components/message-scroller",
       ],
     },
     {
@@ -138,8 +141,8 @@ const sidebars: SidebarsConfig = {
         "components/charts",
         "components/attachment",
         "components/bubble",
-        "components/message",
         "components/direction",
+        "components/questionnaire",
       ],
     },
     {
