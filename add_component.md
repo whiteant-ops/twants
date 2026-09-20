@@ -97,8 +97,8 @@
 |---|---|---|---|---|---|---|
 | 32 | **Card** | ✅ | — | ✅ | P0 | — |
 | 33 | **Table** | ✅ | — | ✅ | P0 | — |
-| 34 | **Data Table** | 📋 | — | 📋 | P1 | Table |
-| 35 | **Accordion** | 📋 | — | 📋 | P1 | — |
+| 34 | **Data Table** | ✅ | — | ✅ | P1 | Table |
+| 35 | **Accordion** | ✅ | — | ✅ | P1 | — |
 | 36 | **Collapsible** | ✅ | — | ✅ | P1 | — |
 | 37 | **Avatar** | ✅ | — | ✅ | P1 | — |
 | 38 | **Marker** | 📋 | — | 📋 | P2 | — |
@@ -106,8 +106,8 @@
 ### v0.4.0 Deliverables
 - [x] Card docs page
 - [x] Table with sorting, striped, bordered variants
-- [ ] Data Table with pagination + filter
-- [ ] Accordion with animation
+- [x] Data Table with pagination + filter
+- [x] Accordion with animation
 
 ---
 
@@ -120,14 +120,14 @@
 | 39 | **Toast** | ✅ | ✅ | ✅ | P0 | — |
 | 40 | **Alert** | ✅(CSS) | ✅ | ✅ | P0 | — |
 | 41 | **Dialog** | ✅(modal) | ✅ | ✅ | P0 | — |
-| 42 | **Alert Dialog** | 📋 | 📋 | 📋 | P1 | Dialog |
+| 42 | **Alert Dialog** | ✅ | ✅ | ✅ | P1 | Dialog |
 | 43 | **Popover** | ✅ | ✅ | ✅ | P1 | — |
 | 44 | **Tooltip** | ✅ | ✅ | ✅ | P0 | — |
-| 45 | **Hover Card** | 📋 | 📋 | 📋 | P2 | Popover |
+| 45 | **Hover Card** | ✅ | ✅ | ✅ | P2 | Popover |
 | 46 | **Sheet** | ✅ | ✅ | ✅ | P1 | Dialog |
-| 47 | **Drawer** | 📋 | 📋 | 📋 | P1 | Sheet |
+| 47 | **Drawer** | ✅ | ✅ | ✅ | P1 | Sheet |
 | 48 | **Progress** | ✅ | ✅ | ✅ | P1 | — |
-| 49 | **Message** | 📋 | 📋 | 📋 | P1 | — |
+| 49 | **Message** | 📋 | ✅ | ✅ | P1 | — |
 | 50 | **Message Scroller** | 📋 | 📋 | 📋 | P2 | Message |
 
 ### v0.5.0 Deliverables
@@ -149,9 +149,9 @@
 | 52 | **Context Menu** | ✅ | 📋 | ✅ | P1 | Dropdown |
 | 53 | **Resizable** | ✅ | 📋 | ✅ | P2 | — |
 | 54 | **Scroll Area** | ✅ | 📋 | ✅ | P1 | — |
-| 55 | **Carousel** | 📋 | 📋 | 📋 | P2 | — |
-| 56 | **Toggle** | 📋 | 📋 | 📋 | P1 | Button |
-| 57 | **Toggle Group** | 📋 | 📋 | 📋 | P1 | Toggle |
+| 55 | **Carousel** | ✅ | 📋 | ✅ | P2 | — |
+| 56 | **Toggle** | ✅ | 📋 | ✅ | P1 | Button |
+| 57 | **Toggle Group** | ✅ | 📋 | ✅ | P1 | Toggle |
 | 58 | **Questionnaire** | 📋 | 📋 | 📋 | P2 | — |
 
 ---
@@ -162,11 +162,11 @@
 
 | # | Component | CSS | JS | Docs | Priority | Depends |
 |---|---|---|---|---|---|---|
-| 59 | **Attachment** | 📋 | 📋 | 📋 | P2 | — |
+| 59 | **Attachment** | ✅ | 📋 | ✅ | P2 | — |
 | 60 | **Aspect Ratio** | ✅ | — | ✅ | P2 | — |
-| 61 | **Bubble** | 📋 | 📋 | 📋 | P2 | — |
+| 61 | **Bubble** | ✅ | 📋 | ✅ | P2 | — |
 | 62 | **Chart** | ✅ | 📋 | ✅ | P2 | — |
-| 63 | **Direction** | 📋 | — | 📋 | P2 | — |
+| 63 | **Direction** | ✅ | — | ✅ | P2 | — |
 | 64 | **Item** (enhanced) | 📋 | 📋 | 📋 | P2 | — |
 
 ---
