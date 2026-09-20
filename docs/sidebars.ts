@@ -17,6 +17,20 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Foundations",
+      items: [
+        "components/badge",
+        "components/separator",
+        "components/label",
+        "components/typography",
+        "components/skeleton",
+        "components/spinner",
+        "components/kbd",
+        "components/empty",
+      ],
+    },
+    {
+      type: "category",
       label: "Buttons & Actions",
       items: ["components/button"],
     },

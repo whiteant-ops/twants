@@ -1247,6 +1247,64 @@
   .twants-badge-warning { background: var(--twants-warning-subtle); color: var(--twants-warning); border-color: transparent; }
   .twants-badge-danger  { background: var(--twants-danger-subtle);  color: var(--twants-danger);  border-color: transparent; }
 
+  /* Separator */
+  .twants-separator {
+    border: 0;
+    background: var(--twants-border);
+  }
+  .twants-separator-horizontal {
+    width: 100%;
+    height: 1px;
+  }
+  .twants-separator-vertical {
+    width: 1px;
+    height: 100%;
+    align-self: stretch;
+  }
+
+  /* Label */
+  .twants-label {
+    display: inline-block;
+    font-size: var(--twants-text-sm);
+    font-weight: var(--twants-font-medium);
+    color: var(--twants-foreground);
+    line-height: 1;
+  }
+  .twants-label-required::after {
+    content: " *";
+    color: var(--twants-danger);
+  }
+
+  /* Typography */
+  .twants-typography {}
+  .twants-h1 { font-size: 2rem; font-weight: var(--twants-font-bold); letter-spacing: -0.02em; line-height: 1.2; color: var(--twants-foreground); }
+  .twants-h2 { font-size: 1.5rem; font-weight: var(--twants-font-semibold); letter-spacing: -0.015em; line-height: 1.25; color: var(--twants-foreground); }
+  .twants-h3 { font-size: 1.25rem; font-weight: var(--twants-font-semibold); letter-spacing: -0.01em; line-height: 1.3; color: var(--twants-foreground); }
+  .twants-h4 { font-size: 1.125rem; font-weight: var(--twants-font-medium); line-height: 1.35; color: var(--twants-foreground); }
+  .twants-body { font-size: var(--twants-text-base); line-height: 1.65; color: var(--twants-foreground); }
+  .twants-body-small { font-size: var(--twants-text-sm); line-height: 1.5; color: var(--twants-foreground-secondary); }
+  .twants-caption { font-size: var(--twants-text-xs); line-height: 1.4; color: var(--twants-foreground-muted); }
+  .twants-overline { font-size: var(--twants-text-xs); font-weight: var(--twants-font-semibold); text-transform: uppercase; letter-spacing: 0.06em; color: var(--twants-foreground-muted); }
+
+  /* Kbd */
+  .twants-kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 0.375rem;
+    font-family: var(--twants-font-mono);
+    font-size: var(--twants-text-xs);
+    font-weight: var(--twants-font-medium);
+    color: var(--twants-foreground-secondary);
+    background: var(--twants-surface-secondary);
+    border: 1px solid var(--twants-border-strong);
+    border-radius: var(--twants-radius-sm);
+    box-shadow: 0 1px 0 var(--twants-border-strong);
+    line-height: 1;
+  }
+
   /* Chip / tag */
   .twants-chip {
     display: inline-flex;
