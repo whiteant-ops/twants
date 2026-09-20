@@ -101,7 +101,7 @@
 | 35 | **Accordion** | ✅ | — | ✅ | P1 | — |
 | 36 | **Collapsible** | ✅ | — | ✅ | P1 | — |
 | 37 | **Avatar** | ✅ | — | ✅ | P1 | — |
-| 38 | **Marker** | 📋 | — | 📋 | P2 | — |
+| 38 | **Marker** | ✅ | — | ✅ | P2 | — |
 
 ### v0.4.0 Deliverables
 - [x] Card docs page
@@ -128,7 +128,7 @@
 | 47 | **Drawer** | ✅ | ✅ | ✅ | P1 | Sheet |
 | 48 | **Progress** | ✅ | ✅ | ✅ | P1 | — |
 | 49 | **Message** | 📋 | ✅ | ✅ | P1 | — |
-| 50 | **Message Scroller** | 📋 | 📋 | 📋 | P2 | Message |
+| 50 | **Message Scroller** | 📋 | ✅ | ✅ | P2 | Message |
 
 ### v0.5.0 Deliverables
 - [x] Toast docs
@@ -152,7 +152,7 @@
 | 55 | **Carousel** | ✅ | 📋 | ✅ | P2 | — |
 | 56 | **Toggle** | ✅ | 📋 | ✅ | P1 | Button |
 | 57 | **Toggle Group** | ✅ | 📋 | ✅ | P1 | Toggle |
-| 58 | **Questionnaire** | 📋 | 📋 | 📋 | P2 | — |
+| 58 | **Questionnaire** | ✅ | 📋 | ✅ | P2 | — |
 
 ---
 
