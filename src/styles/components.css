@@ -302,8 +302,7 @@
   .twants-select:focus {
     outline: none;
     border-color: var(--twants-primary);
-    box-shadow: 0 0 0 1px var(--twants-primary),
-                0 0 0 4px color-mix(in srgb, var(--twants-primary) 20%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--twants-primary) 25%, transparent);
   }
   .twants-input[disabled],
   .twants-textarea[disabled],
@@ -317,8 +316,7 @@
   }
   .twants-input-invalid:focus {
     border-color: var(--twants-danger);
-    box-shadow: 0 0 0 1px var(--twants-danger),
-                0 0 0 4px color-mix(in srgb, var(--twants-danger) 20%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--twants-danger) 25%, transparent);
   }
 
   .twants-textarea {
@@ -355,8 +353,7 @@
   }
   .twants-input-group:focus-within {
     border-color: var(--twants-primary);
-    box-shadow: 0 0 0 1px var(--twants-primary),
-                0 0 0 4px color-mix(in srgb, var(--twants-primary) 20%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--twants-primary) 25%, transparent);
   }
   .twants-input-group > .twants-input,
   .twants-input-group > .twants-select {
@@ -2350,8 +2347,7 @@
   .twants-combobox-trigger:focus {
     outline: none;
     border-color: var(--twants-primary);
-    box-shadow: 0 0 0 1px var(--twants-primary),
-                0 0 0 4px color-mix(in srgb, var(--twants-primary) 20%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--twants-primary) 25%, transparent);
   }
   .twants-combobox-trigger[data-state="open"] { border-color: var(--twants-primary); }
   .twants-combobox-chevron {
