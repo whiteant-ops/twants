@@ -31,6 +31,22 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Forms",
+      items: [
+        "components/field",
+        "components/input",
+        "components/textarea",
+        "components/select",
+        "components/native-select",
+        "components/checkbox",
+        "components/radio-group",
+        "components/switch",
+        "components/slider",
+        "components/input-group",
+      ],
+    },
+    {
+      type: "category",
       label: "Buttons & Actions",
       items: ["components/button"],
     },
