@@ -2512,6 +2512,229 @@
     border-radius: 50%;
     background: var(--twants-primary);
   }
+
+  /* =========================================================
+     MESSAGE / CHAT
+     ========================================================= */
+  .twants-message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .twants-message {
+    display: flex;
+    gap: 0.625rem;
+    max-width: 75%;
+  }
+  .twants-message-sent {
+    margin-left: auto;
+    flex-direction: row-reverse;
+  }
+  .twants-message-avatar {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--twants-surface-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-message-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .twants-message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .twants-message-bubble {
+    padding: 0.625rem 0.875rem;
+    border-radius: var(--twants-radius-lg);
+    background: var(--twants-surface-secondary);
+    color: var(--twants-foreground);
+    font-size: var(--twants-text-sm);
+    line-height: var(--twants-leading-relaxed);
+  }
+  .twants-message-sent .twants-message-bubble {
+    background: var(--twants-primary);
+    color: white;
+  }
+  .twants-message-time {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-message-sent .twants-message-time { text-align: right; }
+
+  /* Bubble (chat widget) */
+  .twants-bubble {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--twants-primary);
+    color: white;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--twants-shadow-lg);
+    z-index: var(--twants-z-toast);
+    transition: transform var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-bubble:hover { transform: scale(1.05); }
+  .twants-bubble-panel {
+    position: fixed;
+    bottom: 6rem;
+    right: 1.5rem;
+    width: 22rem;
+    max-height: 32rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-lg);
+    box-shadow: var(--twants-shadow-xl);
+    z-index: var(--twants-z-toast);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Attachment */
+  .twants-attachment {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    background: var(--twants-surface);
+    font-size: var(--twants-text-sm);
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-attachment:hover { background: var(--twants-surface-secondary); }
+  .twants-attachment-icon {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--twants-radius-sm);
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .twants-attachment-info { flex: 1; min-width: 0; }
+  .twants-attachment-name {
+    font-weight: var(--twants-font-medium);
+    color: var(--twants-foreground);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .twants-attachment-meta {
+    font-size: var(--twants-text-xs);
+    color: var(--twants-foreground-muted);
+  }
+  .twants-attachment-remove {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: var(--twants-radius-sm);
+    background: transparent;
+    border: 0;
+    color: var(--twants-foreground-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .twants-attachment-remove:hover { background: var(--twants-surface-secondary); color: var(--twants-danger); }
+
+  /* Direction */
+  .twants-rtl { direction: rtl; }
+  .twants-ltr { direction: ltr; }
+
+  /* Toggle Group */
+  .twants-toggle-group {
+    display: inline-flex;
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius);
+    overflow: hidden;
+  }
+  .twants-toggle-group-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.25rem;
+    min-width: 2.25rem;
+    padding: 0 0.625rem;
+    background: transparent;
+    border: 0;
+    border-right: 1px solid var(--twants-border);
+    color: var(--twants-foreground-secondary);
+    cursor: pointer;
+    transition: background var(--twants-duration-fast) var(--twants-ease-standard),
+                color var(--twants-duration-fast) var(--twants-ease-standard);
+  }
+  .twants-toggle-group-item:last-child { border-right: 0; }
+  .twants-toggle-group-item:hover { background: var(--twants-surface-secondary); color: var(--twants-foreground); }
+  .twants-toggle-group-item[aria-pressed="true"] {
+    background: var(--twants-primary-subtle);
+    color: var(--twants-primary);
+  }
+  .twants-toggle-group-item:focus-visible {
+    outline: 2px solid var(--twants-focus-ring);
+    outline-offset: -2px;
+  }
+
+  /* Data Table (extends table) */
+  .twants-data-table-wrap { overflow-x: auto; }
+  .twants-data-table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+  }
+  .twants-data-table-search {
+    position: relative;
+    max-width: 16rem;
+  }
+  .twants-data-table-search > .twants-input { padding-left: 2.25rem; }
+  .twants-data-table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    font-size: var(--twants-text-sm);
+    color: var(--twants-foreground-secondary);
+  }
+  .twants-data-table-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--twants-foreground-muted);
+    font-size: var(--twants-text-sm);
+  }
+
+  /* Alert Dialog */
+  .twants-alert-dialog { max-width: 26rem; }
+
+  /* Hover Card */
+  .twants-hover-card {
+    position: absolute;
+    z-index: var(--twants-z-dropdown);
+    width: 20rem;
+    padding: 1rem;
+    background: var(--twants-surface);
+    border: 1px solid var(--twants-border);
+    border-radius: var(--twants-radius-md);
+    box-shadow: var(--twants-shadow-lg);
+  }
 }
 
 /* =========================================================

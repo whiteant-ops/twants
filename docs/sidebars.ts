@@ -70,7 +70,10 @@ const sidebars: SidebarsConfig = {
       items: [
         "components/card",
         "components/table",
+        "components/data-table",
         "components/tree",
+        "components/accordion",
+        "components/collapsible",
       ],
     },
     {
@@ -80,6 +83,8 @@ const sidebars: SidebarsConfig = {
         "components/alert",
         "components/toast",
         "components/dialog",
+        "components/alert-dialog",
+        "components/progress",
       ],
     },
     {
@@ -98,7 +103,9 @@ const sidebars: SidebarsConfig = {
       items: [
         "components/tooltip",
         "components/popover",
+        "components/hover-card",
         "components/sheet",
+        "components/drawer",
         "components/context-menu",
       ],
     },
@@ -124,10 +131,15 @@ const sidebars: SidebarsConfig = {
       label: "Other",
       items: [
         "components/combobox",
-        "components/collapsible",
+        "components/toggle-group",
+        "components/carousel",
         "components/scroll-area",
         "components/stepper",
         "components/charts",
+        "components/attachment",
+        "components/bubble",
+        "components/message",
+        "components/direction",
       ],
     },
     {
