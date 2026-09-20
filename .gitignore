@@ -1,5 +1,7 @@
 node_modules
 dist
+docs/build
+docs/.docusaurus
 .DS_Store
 *.log
 .vite

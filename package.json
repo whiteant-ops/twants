@@ -51,13 +51,17 @@
     "bin": {
         "twants": "./cli/twants.mjs"
     },
+    "sideEffects": [
+        "*.css"
+    ],
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build",
+        "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && vite build && tsc --project tsconfig.build.json",
         "preview": "vite preview",
         "demo": "vite --open /demo/",
         "docs": "vite --open /docs/",
-        "typecheck": "tsc --noEmit"
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run build"
     },
     "peerDependencies": {
         "tailwindcss": "^4.3.3"
